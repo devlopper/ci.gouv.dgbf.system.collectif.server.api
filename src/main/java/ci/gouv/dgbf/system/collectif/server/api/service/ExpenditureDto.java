@@ -1,0 +1,40 @@
+package ci.gouv.dgbf.system.collectif.server.api.service;
+
+import org.cyk.utility.service.entity.IdentifiableSystemScalarString;
+
+public interface ExpenditureDto extends IdentifiableSystemScalarString {
+
+	String getActivityAsString();
+	ExpenditureDto setActivityAsString(String activityAsString);
+	
+	String getEconomicNatureAsString();
+	ExpenditureDto setEconomicNatureAsString(String economicNatureAsString);
+	
+	EntryAuthorizationDto getEntryAuthorization();
+	ExpenditureDto setEntryAuthorization(EntryAuthorizationDto entryAuthorization);
+	
+	PaymentCreditDto getPaymentCredit();
+	ExpenditureDto setPaymentCredit(PaymentCreditDto paymentCredit);
+	
+	String getBudgetaryActVersionAsString();
+	ExpenditureDto setBudgetaryActVersionAsString(String budgetaryActVersionAsString);
+	
+	/**/
+	
+	String JSON_EXPENDITURE = "depense";
+	
+	String JSON_IDENTIFIER = "identifiant";
+	String JSON_SECTION_AS_STRING = "section_string";
+	String JSON_ADMINISTRATIVE_UNIT_AS_STRING = "unite_administrative_string";
+	String JSON_BUDGET_SPECIALIZATION_UNIT_AS_STRING = "unite_specialisation_budget_string";
+	String JSON_ACTION_AS_STRING = "action_string";
+	String JSON_ACTIVITY_AS_STRING = "activite_string";
+	String JSON_NATURE_AS_STRING = "nature_string";
+	String JSON_ECONOMIC_NATURE_AS_STRING = "nature_economique_string";
+	String JSON_ENTRY_AUTHORIZATION = "autorisation_engagement";
+	String JSON_PAYMENT_CREDIT = "credit_paiement";
+	String JSON_BUDGETARY_ACT_AS_STRING = "acte_budgetaire_string";
+	String JSON_BUDGETARY_ACT_VERSION_AS_STRING = "version_acte_budgetaire_string";
+	String JSON_FUNDING_SOURCE_AS_STRING = "source_financement_string";
+	String JSON_LESSOR_AS_STRING = "bailleur_string";
+}
