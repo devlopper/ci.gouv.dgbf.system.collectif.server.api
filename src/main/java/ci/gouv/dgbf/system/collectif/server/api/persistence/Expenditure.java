@@ -25,7 +25,4 @@ public interface Expenditure {
 	
 	BudgetaryActVersion getBudgetaryActVersion();
 	Expenditure setBudgetaryActVersion(BudgetaryActVersion budgetaryActVersion);
-	
-	String PROPERTY_AS_STRINGS = "asstrings";
-	String PROPERTY_AMOUNTS = "amounts";
 }
