@@ -7,6 +7,6 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 @Path(BudgetaryActService.PATH)
 @Tag(name = "Actes budgétaires",description = "Gestion des actes budgétaires")
 public interface BudgetaryActService extends org.cyk.utility.service.SpecificService<BudgetaryActDto> {
-	String PATH = "acte_budgetaire";
+	String PATH = "actes_budgetaires";
 	
 }

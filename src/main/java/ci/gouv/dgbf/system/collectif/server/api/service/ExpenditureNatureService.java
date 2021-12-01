@@ -7,6 +7,6 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 @Path(ExpenditureNatureService.PATH)
 @Tag(name = "Nature de dépenses")
 public interface ExpenditureNatureService extends org.cyk.utility.service.SpecificService<ExpenditureNatureDto> {
-	String PATH = "nature_depense";
+	String PATH = "natures_depenses";
 	
 }

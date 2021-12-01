@@ -7,5 +7,5 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 @Path(SectionService.PATH)
 @Tag(name = "Sections")
 public interface SectionService extends org.cyk.utility.service.SpecificService<SectionDto> {
-	String PATH = "section";
+	String PATH = "sections";
 }
