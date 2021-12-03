@@ -4,4 +4,9 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 
 public interface Action extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
+	Section getSection();
+	Action setSection(Section section);
+	
+	BudgetSpecializationUnit getBudgetSpecializationUnit();
+	Action setBudgetSpecializationUnit(BudgetSpecializationUnit budgetSpecializationUnit);
 }
