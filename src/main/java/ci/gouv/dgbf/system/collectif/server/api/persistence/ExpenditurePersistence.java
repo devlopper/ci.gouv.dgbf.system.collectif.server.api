@@ -6,6 +6,5 @@ import org.cyk.utility.persistence.SpecificPersistence;
 
 public interface ExpenditurePersistence extends SpecificPersistence<Expenditure> {
 
-	Integer updateEntryAuthoriations(Map<String,Long> entryAuthorizations);
-
+	Integer updateAdjustments(Map<String,Long[]> adjustments);
 }

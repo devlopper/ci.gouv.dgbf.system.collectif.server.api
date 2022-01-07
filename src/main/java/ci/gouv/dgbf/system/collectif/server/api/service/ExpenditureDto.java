@@ -1,6 +1,14 @@
 package ci.gouv.dgbf.system.collectif.server.api.service;
 
+import java.io.Serializable;
+
+import javax.json.bind.annotation.JsonbProperty;
+
 import org.cyk.utility.service.entity.IdentifiableSystemScalarString;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
 public interface ExpenditureDto extends IdentifiableSystemScalarString {
 
@@ -39,4 +47,20 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	String JSON_LESSOR_AS_STRING = "bailleur_string";
 	String JSONS_AMOUTNS = "montants";
 	String JSONS_STRINGS = "chaines";
+	String JSONS_IDENTIFIERS = "identifiants";
+	
+	String JSONS_ADJUSTMENTS = "ajustements";
+	
+	@Getter @Setter @Accessors(chain=true)
+	public static class AdjustmentDto implements Serializable {
+		
+		@JsonbProperty(value = "identifiant_depense")
+		private String identifier;
+		
+		@JsonbProperty(value = "ajustement_"+EntryAuthorizationDto.JSON_ENTRY_AUTHORIZATION)
+		private Long entryAuthorization;
+		
+		@JsonbProperty(value = "ajustement_"+PaymentCreditDto.JSON_PAYMENT_CREDIT)
+		private Long paymentCredit;
+	}
 }
