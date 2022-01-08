@@ -17,7 +17,7 @@ public interface ExpenditureBusiness extends SpecificBusiness<Expenditure> {
 	Result adjust(Map<String,Long[]> adjustments);
 	
 	/**
-	 * Ajuster les autorisations d'engagements des dépenses.<br/>
+	 * {@link #adjust(Map)}.<br/>
 	 * Les crédits de paiements sont initialisés avec les autorisations d'engagements.
 	 * @param entryAuthorizations : Autorisations d'engagements
 	 * @return
