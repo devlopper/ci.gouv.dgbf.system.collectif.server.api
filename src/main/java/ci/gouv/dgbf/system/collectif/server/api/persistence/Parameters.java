@@ -15,4 +15,6 @@ public interface Parameters {
 	String ECONOMIC_NATURE_IDENTIFIER = "ne_id";	
 	String FUNDING_SOURCE_IDENTIFIER = "sf_id";
 	String LESSOR_IDENTIFIER = "b_id";
+	String REGULATORY_ACT_INCLUDED = "ar_inclus";
+	String YEAR = "exercice";
 }
