@@ -24,8 +24,8 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	PaymentCreditDto getPaymentCredit();
 	ExpenditureDto setPaymentCredit(PaymentCreditDto paymentCredit);
 	
-	String getBudgetaryActVersionAsString();
-	ExpenditureDto setBudgetaryActVersionAsString(String budgetaryActVersionAsString);
+	String getActVersionAsString();
+	ExpenditureDto setActVersionAsString(String actVersionAsString);
 	
 	/**/
 	

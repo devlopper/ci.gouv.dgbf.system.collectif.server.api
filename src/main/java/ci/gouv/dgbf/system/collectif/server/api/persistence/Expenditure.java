@@ -23,6 +23,8 @@ public interface Expenditure {
 	PaymentCredit getPaymentCredit();
 	Expenditure setPaymentCredit(PaymentCredit paymentCredit);
 	
-	BudgetaryActVersion getBudgetaryActVersion();
-	Expenditure setBudgetaryActVersion(BudgetaryActVersion budgetaryActVersion);
+	LegislativeActVersion getActVersion();
+	Expenditure setActVersion(LegislativeActVersion actVersion);
+	
+	String NAME = "Dépense";
 }

@@ -5,4 +5,5 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 public interface RegulatoryAct extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
 
+	String NAME = "Acte de gestion";
 }
