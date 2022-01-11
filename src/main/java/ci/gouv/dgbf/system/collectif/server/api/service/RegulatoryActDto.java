@@ -14,4 +14,8 @@ public interface RegulatoryActDto extends IdentifiableSystemScalarStringIdentifi
 	String JSON_INCLUDED_AS_STRING = "inclus_chaine";
 	
 	String JSONS_YEAR_NAME_ENTRY_AUTHORIZATION_AMOUNT_PAYMENT_CREDIT_AMOUNT_INCLUDED_AS_STRING = "exercice_libelle_autorisation_engagement_credit_paiement_inclus_chaine";
+	
+	String JSONS_IDENTIFIERS = "identifiants";
+	String JSON_LEGISLATIVE_VERSION_IDENTIFIER = "identifiant_version_collectif";
+	String JSON_EXISTING_IGNORABLE = "existant_ignorable";
 }
