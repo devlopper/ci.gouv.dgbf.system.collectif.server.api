@@ -6,4 +6,5 @@ public interface RegulatoryAct extends IdentifiableSystemScalarStringIdentifiabl
 
 
 	String NAME = "Acte de gestion";
+	String NAME_PLURAL = "Actes de gestion";
 }

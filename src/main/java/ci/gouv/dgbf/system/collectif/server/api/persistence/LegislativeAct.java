@@ -16,4 +16,5 @@ public interface LegislativeAct extends IdentifiableSystemScalarStringIdentifiab
 	LegislativeAct setCreationDate(LocalDateTime creationDate);
 	
 	String NAME = "Collectif budgétaire";
+	String NAME_PLURAL = "Collectifs budgétaires";
 }
