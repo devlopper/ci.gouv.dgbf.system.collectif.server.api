@@ -27,7 +27,7 @@ public interface RegulatoryActService extends org.cyk.utility.service.SpecificSe
 		,@APIResponse(description = "Erreur lors de l'inclusion",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response include(@QueryParam(RegulatoryActDto.JSONS_IDENTIFIERS) List<String> identifiers,@QueryParam(RegulatoryActDto.JSON_LEGISLATIVE_VERSION_IDENTIFIER) String legislativeActVersionIdentifier
-			,@QueryParam(RegulatoryActDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable);
+			,@QueryParam(RegulatoryActDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable,@QueryParam(RegulatoryActDto.JSON_AUDIT_WHO) String auditWho);
 	
 	@POST
 	@Path("exclure")
@@ -38,5 +38,5 @@ public interface RegulatoryActService extends org.cyk.utility.service.SpecificSe
 		,@APIResponse(description = "Erreur lors de l'exclusion",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response exclude(@QueryParam(RegulatoryActDto.JSONS_IDENTIFIERS) List<String> identifiers,@QueryParam(RegulatoryActDto.JSON_LEGISLATIVE_VERSION_IDENTIFIER) String legislativeActVersionIdentifier
-			,@QueryParam(RegulatoryActDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable);
+			,@QueryParam(RegulatoryActDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable,@QueryParam(RegulatoryActDto.JSON_AUDIT_WHO) String auditWho);
 }

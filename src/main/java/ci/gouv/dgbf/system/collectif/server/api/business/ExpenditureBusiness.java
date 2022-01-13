@@ -2,6 +2,8 @@ package ci.gouv.dgbf.system.collectif.server.api.business;
 
 import java.util.Map;
 
+import javax.transaction.Transactional;
+
 import org.cyk.utility.business.Result;
 import org.cyk.utility.business.SpecificBusiness;
 
@@ -14,7 +16,8 @@ public interface ExpenditureBusiness extends SpecificBusiness<Expenditure> {
 	 * @param adjustments : autorisations d'engagements et crédits de paiements
 	 * @return
 	 */
-	Result adjust(Map<String,Long[]> adjustments);
+	@Transactional
+	Result adjust(Map<String,Long[]> adjustments,String userIdentifier);
 	
 	/**
 	 * {@link #adjust(Map)}.<br/>
@@ -22,6 +25,7 @@ public interface ExpenditureBusiness extends SpecificBusiness<Expenditure> {
 	 * @param entryAuthorizations : Autorisations d'engagements
 	 * @return
 	 */
-	Result adjustByEntryAuthorizations(Map<String,Long> entryAuthorizations);
+	@Transactional
+	Result adjustByEntryAuthorizations(Map<String,Long> entryAuthorizations,String userIdentifier);
 	
 }

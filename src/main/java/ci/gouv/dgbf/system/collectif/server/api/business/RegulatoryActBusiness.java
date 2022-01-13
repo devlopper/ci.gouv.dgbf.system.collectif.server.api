@@ -9,9 +9,11 @@ import ci.gouv.dgbf.system.collectif.server.api.persistence.RegulatoryAct;
 
 public interface RegulatoryActBusiness extends SpecificBusiness<RegulatoryAct> {
 
-	Result include(Collection<String> identifiers,String legislativeActVersionIdentifier,Boolean existingIgnorable);
-	Result include(String legislativeActIdentifier,Boolean existingIgnorable,String...identifiers);
+	String INCLUDE_AUDIT_IDENTIFIER = "INCLUSION";
+	Result include(Collection<String> identifiers,String legislativeActVersionIdentifier,Boolean existingIgnorable,String userIdentifier);
+	Result include(String legislativeActIdentifier,Boolean existingIgnorable,String userIdentifier,String...identifiers);
 	
-	Result exclude(Collection<String> identifiers,String legislativeActVersionIdentifier,Boolean existingIgnorable);
-	Result exclude(String legislativeActIdentifier,Boolean existingIgnorable,String...identifiers);
+	String EXCLUDE_AUDIT_IDENTIFIER = "EXCLUSION";
+	Result exclude(Collection<String> identifiers,String legislativeActVersionIdentifier,Boolean existingIgnorable,String userIdentifier);
+	Result exclude(String legislativeActIdentifier,Boolean existingIgnorable,String userIdentifier,String...identifiers);
 }

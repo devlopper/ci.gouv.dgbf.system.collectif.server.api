@@ -1,10 +1,9 @@
 package ci.gouv.dgbf.system.collectif.server.api.persistence;
 
-public interface Expenditure {
+import org.cyk.utility.persistence.entity.IdentifiableSystemScalarString;
 
-	String getIdentifier();
-	Expenditure setIdentifier(String identifier);
-	
+public interface Expenditure extends IdentifiableSystemScalarString {
+
 	String getActivityIdentifier();
 	Expenditure setActivityIdentifier(String activityIdentifier);
 	
@@ -27,4 +26,5 @@ public interface Expenditure {
 	Expenditure setActVersion(LegislativeActVersion actVersion);
 	
 	String NAME = "Dépense";
+	String NAME_PLURAL = "Dépenses";
 }

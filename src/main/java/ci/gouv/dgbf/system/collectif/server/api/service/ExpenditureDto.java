@@ -51,6 +51,8 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	
 	String JSONS_ADJUSTMENTS = "ajustements";
 	
+	String JSON_USER_IDENTIFIER = "utilisateur";
+	
 	@Getter @Setter @Accessors(chain=true)
 	public static class AdjustmentDto implements Serializable {
 		

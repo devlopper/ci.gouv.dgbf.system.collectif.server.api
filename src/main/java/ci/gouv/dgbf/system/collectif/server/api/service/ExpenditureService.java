@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -25,9 +26,9 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	@Operation(description = "Ajuster une liste de dépenses")
 	@APIResponses(value = {
 			@APIResponse(description = "Une liste de dépenses",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
-			,@APIResponse(description = "Erreur lors de l'ajustement d'une liste de dépenses",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			,@APIResponse(description = "Erreur lors de l'ajustement",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
-	Response adjust(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos);
+	Response adjust(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ExpenditureDto.JSON_USER_IDENTIFIER) String userIdentifier);
 	
 	@POST
 	@Path("ajustement-par-autorisation-engagement")
@@ -35,7 +36,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	@Operation(description = "Ajuster une liste de dépenses par autorisations d'engagements")
 	@APIResponses(value = {
 			@APIResponse(description = "Une liste de dépenses",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
-			,@APIResponse(description = "Erreur lors de l'ajustement par autorisations d'engagements d'une liste de dépenses",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			,@APIResponse(description = "Erreur lors de l'ajustement par autorisations d'engagements",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
-	Response adjustByEntryAuthorizations(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos);
+	Response adjustByEntryAuthorizations(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ExpenditureDto.JSON_USER_IDENTIFIER) String userIdentifier);
 }
