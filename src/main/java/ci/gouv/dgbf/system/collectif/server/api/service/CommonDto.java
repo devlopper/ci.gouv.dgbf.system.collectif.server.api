@@ -3,7 +3,7 @@ package ci.gouv.dgbf.system.collectif.server.api.service;
 public interface CommonDto {
 	
 	/* Audits */
-	String JSON___AUDIT__ = "audit";
+	String JSON___AUDIT__ = "__audit__";
 	String JSONS___AUDITS__ = "audits";
 	String JSON___AUDIT_WHO__ = "audit_acteur";
 	String JSON___AUDIT_FUNCTIONALITY__ = "audit_fonctionnalite";
