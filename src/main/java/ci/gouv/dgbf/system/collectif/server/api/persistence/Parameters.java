@@ -16,5 +16,6 @@ public interface Parameters {
 	String FUNDING_SOURCE_IDENTIFIER = "sf_id";
 	String LESSOR_IDENTIFIER = "b_id";
 	String REGULATORY_ACT_INCLUDED = "ar_inclus";
+	String REGULATORY_ACT_IDENTIFIER = "ar_id";
 	String YEAR = "exercice";
 }
