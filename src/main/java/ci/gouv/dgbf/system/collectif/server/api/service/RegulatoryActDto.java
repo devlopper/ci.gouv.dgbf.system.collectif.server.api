@@ -18,5 +18,11 @@ public interface RegulatoryActDto extends IdentifiableSystemScalarStringIdentifi
 	String JSONS_IDENTIFIERS = "identifiants";
 	String JSON_LEGISLATIVE_VERSION_IDENTIFIER = "identifiant_version_collectif";
 	String JSON_EXISTING_IGNORABLE = "existant_ignorable";
-	String JSON_AUDIT_WHO = "audit_acteur";
+	
+	String JSON___AUDIT__ = CommonDto.JSON___AUDIT__;
+	String JSONS___AUDITS__ = CommonDto.JSONS___AUDITS__;
+	String JSON___AUDIT_WHO__ = CommonDto.JSON___AUDIT_WHO__;
+	String JSON___AUDIT_FUNCTIONALITY__ = CommonDto.JSON___AUDIT_FUNCTIONALITY__;
+	String JSON___AUDIT_WHAT__ = CommonDto.JSON___AUDIT_WHAT__;
+	String JSON___AUDIT_WHEN__ = CommonDto.JSON___AUDIT_WHEN__;
 }

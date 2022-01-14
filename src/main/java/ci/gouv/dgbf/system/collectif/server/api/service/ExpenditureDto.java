@@ -51,7 +51,12 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	
 	String JSONS_ADJUSTMENTS = "ajustements";
 	
-	String JSON_USER_IDENTIFIER = "utilisateur";
+	String JSON___AUDIT__ = CommonDto.JSON___AUDIT__;
+	String JSONS___AUDITS__ = CommonDto.JSONS___AUDITS__;
+	String JSON___AUDIT_WHO__ = CommonDto.JSON___AUDIT_WHO__;
+	String JSON___AUDIT_FUNCTIONALITY__ = CommonDto.JSON___AUDIT_FUNCTIONALITY__;
+	String JSON___AUDIT_WHAT__ = CommonDto.JSON___AUDIT_WHAT__;
+	String JSON___AUDIT_WHEN__ = CommonDto.JSON___AUDIT_WHEN__;
 	
 	@Getter @Setter @Accessors(chain=true)
 	public static class AdjustmentDto implements Serializable {

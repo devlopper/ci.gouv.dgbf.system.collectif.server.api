@@ -28,7 +28,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 			@APIResponse(description = "Une liste de dépenses",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 			,@APIResponse(description = "Erreur lors de l'ajustement",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
-	Response adjust(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ExpenditureDto.JSON_USER_IDENTIFIER) String userIdentifier);
+	Response adjust(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
 	
 	@POST
 	@Path("ajustement-par-autorisation-engagement")
@@ -38,5 +38,5 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 			@APIResponse(description = "Une liste de dépenses",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 			,@APIResponse(description = "Erreur lors de l'ajustement par autorisations d'engagements",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
-	Response adjustByEntryAuthorizations(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ExpenditureDto.JSON_USER_IDENTIFIER) String userIdentifier);
+	Response adjustByEntryAuthorizations(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
 }
