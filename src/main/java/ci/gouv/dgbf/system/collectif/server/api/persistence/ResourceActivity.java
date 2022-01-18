@@ -5,8 +5,8 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 public interface ResourceActivity extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
 	Section getSection();
-	Activity setSection(Section section);
+	ResourceActivity setSection(Section section);
 	
 	BudgetSpecializationUnit getBudgetSpecializationUnit();
-	Activity setBudgetSpecializationUnit(BudgetSpecializationUnit budgetSpecializationUnit);
+	ResourceActivity setBudgetSpecializationUnit(BudgetSpecializationUnit budgetSpecializationUnit);
 }
