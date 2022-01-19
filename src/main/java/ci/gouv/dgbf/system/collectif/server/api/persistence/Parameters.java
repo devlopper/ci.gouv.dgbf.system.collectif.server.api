@@ -9,7 +9,8 @@ public interface Parameters {
 	String ADMINISTRATIVE_UNIT_IDENTIFIER = "ua_id";
 	String BUDGET_SPECIALIZATION_UNIT_IDENTIFIER = "usb_id";
 	String ACTION_IDENTIFIER = "a_id";
-	String ACTIVITY_IDENTIFIER = "ac_id";
+	String ACTIVITY_IDENTIFIER = "as_id";
+	String RESOURCE_ACTIVITY_IDENTIFIER = "ar_id";
 	String EXPENDITURE_NATURE_IDENTIFIER = "nd_id";
 	String ACTIVITY_CATEGORY_IDENTIFIER = "ca_id";
 	String ECONOMIC_NATURE_IDENTIFIER = "ne_id";	

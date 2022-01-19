@@ -4,4 +4,6 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 
 public interface EconomicNature extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
+	String NAME = "Nature économique";
+	String INITIALS = "N.E.";
 }

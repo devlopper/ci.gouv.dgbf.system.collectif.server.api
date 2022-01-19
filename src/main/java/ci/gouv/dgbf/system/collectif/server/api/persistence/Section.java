@@ -4,4 +4,5 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 
 public interface Section extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
+	String NAME = "Section";
 }

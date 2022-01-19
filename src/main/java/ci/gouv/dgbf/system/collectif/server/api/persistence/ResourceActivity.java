@@ -9,4 +9,6 @@ public interface ResourceActivity extends IdentifiableSystemScalarStringIdentifi
 	
 	BudgetSpecializationUnit getBudgetSpecializationUnit();
 	ResourceActivity setBudgetSpecializationUnit(BudgetSpecializationUnit budgetSpecializationUnit);
+	
+	String NAME = "Activité";
 }

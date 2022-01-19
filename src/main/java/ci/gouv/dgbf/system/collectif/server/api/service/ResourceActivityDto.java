@@ -5,10 +5,10 @@ import org.cyk.utility.service.entity.IdentifiableSystemScalarStringIdentifiable
 public interface ResourceActivityDto extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
 	SectionDto getSection();
-	ActivityDto setSection(SectionDto section);
+	ResourceActivityDto setSection(SectionDto section);
 	
 	BudgetSpecializationUnitDto getBudgetSpecializationUnit();
-	ActivityDto setBudgetSpecializationUnit(BudgetSpecializationUnitDto budgetSpecializationUnit);
+	ResourceActivityDto setBudgetSpecializationUnit(BudgetSpecializationUnitDto budgetSpecializationUnit);
 	
 	String JSON_IDENTIFIER = "identifiant";
 	String JSON_CODE = "code";

@@ -15,4 +15,8 @@ public interface BudgetSpecializationUnit extends IdentifiableSystemScalarString
 	
 	Section getSection();
 	BudgetSpecializationUnit setSection(Section section);
+
+	String NAME = "Unité de spécialisation du budget";
+	
+	String INITALS = "U.S.B.";
 }
