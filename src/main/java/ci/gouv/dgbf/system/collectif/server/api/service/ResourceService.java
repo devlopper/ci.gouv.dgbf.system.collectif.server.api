@@ -21,7 +21,7 @@ public interface ResourceService extends org.cyk.utility.service.SpecificService
 	String PATH = "ressources";
 	
 	@POST
-	@Path("ajustement")
+	@Path("ajustements")
 	@Produces({MediaType.APPLICATION_JSON})
 	@Operation(description = "Ajuster une liste de ressources")
 	@APIResponses(value = {
