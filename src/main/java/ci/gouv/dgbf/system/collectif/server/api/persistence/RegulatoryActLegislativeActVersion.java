@@ -12,4 +12,7 @@ public interface RegulatoryActLegislativeActVersion extends IdentifiableSystemSc
 	
 	RegulatoryActLegislativeActVersion setIncluded(Boolean included);
 	Boolean getIncluded();
+	
+	/**/
+
 }
