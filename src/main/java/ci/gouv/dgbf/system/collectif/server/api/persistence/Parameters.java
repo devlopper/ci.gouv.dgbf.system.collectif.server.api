@@ -19,4 +19,5 @@ public interface Parameters {
 	String REGULATORY_ACT_INCLUDED = "ar_inclus";
 	String REGULATORY_ACT_IDENTIFIER = "ar_id";
 	String YEAR = "exercice";
+	String ADJUSTMENTS_EQUAL_ZERO = "ae_et_cp_eq_zero";
 }
