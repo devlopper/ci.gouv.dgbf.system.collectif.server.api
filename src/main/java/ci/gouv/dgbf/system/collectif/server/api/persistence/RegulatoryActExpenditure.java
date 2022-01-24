@@ -4,5 +4,7 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarString;
 
 public interface RegulatoryActExpenditure extends IdentifiableSystemScalarString {
 
-
+	String getActIdentifier();
+	RegulatoryActExpenditure setActIdentifier(String actIdentifier);
+	
 }

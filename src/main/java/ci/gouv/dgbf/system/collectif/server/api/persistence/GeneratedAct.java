@@ -53,5 +53,7 @@ public interface GeneratedAct extends IdentifiableSystemScalarStringIdentifiable
 	        default: throw new IllegalArgumentException(String.format("value [%s] not supported.", value) );
 	        }
 	    }
+		
+		public static final Type[] CANCELATION_REPOSITIONING = new Type[] {CANCELATION,REPOSITIONING};
 	}
 }

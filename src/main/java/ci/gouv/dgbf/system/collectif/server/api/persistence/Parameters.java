@@ -18,8 +18,10 @@ public interface Parameters {
 	String LESSOR_IDENTIFIER = "b_id";
 	String REGULATORY_ACT_INCLUDED = "ar_inclus";
 	String REGULATORY_ACT_IDENTIFIER = "ar_id";
+	String REGULATORY_ACT_IDENTIFIERS = "ar_ids";
 	String YEAR = "exercice";
 	String ADJUSTMENTS_EQUAL_ZERO = "ae_et_cp_eq_zero";
 	String GENERATED_ACT_IDENTIFIER = "ag_id";
+	String GENERATED_ACT_IDENTIFIERS = "ag_ids";
 	String GENERATED_ACT_EXPENDITURE_EXISTS = "d_ag_existe";
 }
