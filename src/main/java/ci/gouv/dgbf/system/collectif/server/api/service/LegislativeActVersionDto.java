@@ -22,4 +22,5 @@ public interface LegislativeActVersionDto {
 	String JSON_NAME = "libelle";
 	String JSON_BUDGETARY_ACT = "acte_budgetaire";
 	String JSON_BUDGETARY_ACT_IDENTIFIER = "identifiant_acte_budgetaire";
+	String JSON___AUDIT__ = CommonDto.JSON___AUDIT__;
 }
