@@ -19,7 +19,7 @@ public interface RegulatoryActService extends org.cyk.utility.service.SpecificSe
 	String PATH = "actes_gestion";
 	
 	@POST
-	@Path("inclure")
+	@Path("inclusion")
 	@Produces({MediaType.APPLICATION_JSON})
 	@Operation(description = "Inclure une liste d'actes de gestion dans un collectif budgétaire")
 	@APIResponses(value = {
@@ -30,7 +30,7 @@ public interface RegulatoryActService extends org.cyk.utility.service.SpecificSe
 			,@QueryParam(RegulatoryActDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable,@QueryParam(RegulatoryActDto.JSON___AUDIT_WHO__) String auditWho);
 	
 	@POST
-	@Path("exclure")
+	@Path("exclusion")
 	@Produces({MediaType.APPLICATION_JSON})
 	@Operation(description = "Exclure une liste d'actes de gestion d'un collectif budgétaire")
 	@APIResponses(value = {
