@@ -6,5 +6,6 @@ public interface Exercise extends IdentifiableSystemScalarStringIdentifiableBusi
 
 	Short getYear();
 	Exercise setYear(Short year);
-	
+
+	String NAME = "Exercice";
 }

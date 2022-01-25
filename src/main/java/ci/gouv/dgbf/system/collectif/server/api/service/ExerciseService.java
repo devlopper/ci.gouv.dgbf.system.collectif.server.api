@@ -4,5 +4,5 @@ import javax.ws.rs.Path;
 
 @Path(ExerciseService.PATH)
 public interface ExerciseService extends org.cyk.utility.service.SpecificService<ExerciseDto> {
-	String PATH = "exercice";
+	String PATH = "exercices";
 }
