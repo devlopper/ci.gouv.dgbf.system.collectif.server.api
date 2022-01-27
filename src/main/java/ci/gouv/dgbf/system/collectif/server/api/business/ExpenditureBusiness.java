@@ -2,8 +2,6 @@ package ci.gouv.dgbf.system.collectif.server.api.business;
 
 import java.util.Map;
 
-import javax.transaction.Transactional;
-
 import org.cyk.utility.business.Result;
 import org.cyk.utility.business.SpecificBusiness;
 
@@ -17,7 +15,6 @@ public interface ExpenditureBusiness extends SpecificBusiness<Expenditure> {
 	 * @param adjustments : autorisations d'engagements et crédits de paiements
 	 * @return
 	 */
-	@Transactional
 	Result adjust(Map<String,Long[]> adjustments,String auditWho);
 	
 	String ADJUST_BY_ENTRY_AUTHORIZATIONS_AUDIT_IDENTIFIER = "AJUSTEMENT_PAR_AE";
@@ -27,7 +24,8 @@ public interface ExpenditureBusiness extends SpecificBusiness<Expenditure> {
 	 * @param entryAuthorizations : Autorisations d'engagements
 	 * @return
 	 */
-	@Transactional
 	Result adjustByEntryAuthorizations(Map<String,Long> entryAuthorizations,String auditWho);
-	
+
+	String IMPORT_AUDIT_IDENTIFIER = "IMPORTATION";
+	Result import_(String legislativeActVersionIdentifier,String auditWho);
 }

@@ -32,6 +32,7 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	String JSON_EXPENDITURE = "depense";
 	
 	String JSON_IDENTIFIER = "identifiant";
+	String JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER = "identifiant_version_collectif";
 	String JSON_SECTION_AS_STRING = "section_string";
 	String JSON_ADMINISTRATIVE_UNIT_AS_STRING = "unite_administrative_string";
 	String JSON_BUDGET_SPECIALIZATION_UNIT_AS_STRING = "unite_specialisation_budget_string";
