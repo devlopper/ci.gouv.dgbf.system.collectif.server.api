@@ -19,10 +19,10 @@ public interface LegislativeActService extends org.cyk.utility.service.SpecificS
 
 	@POST
 	@Path("version-par-defaut")
-	@Operation(description = "Définir le version par défaut")
+	@Operation(description = "Mise à jour de la version par défaut")
 	@APIResponses(value = {
 			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
-			,@APIResponse(description = "Erreur lors de la définition de la version par défaut",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			,@APIResponse(description = "Erreur lors de la mise à jour de la version par défaut",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response updateDefaultVersion(@QueryParam(LegislativeActDto.JSON_LEGISLATIVE_ACT_IDENTIFIER) String identifier,@QueryParam(LegislativeActDto.JSON_DEFAULT_VERSION_IDENTIFIER) String versionIdentifier,@QueryParam(LegislativeActDto.JSON___AUDIT_WHO__) String auditWho);
 }

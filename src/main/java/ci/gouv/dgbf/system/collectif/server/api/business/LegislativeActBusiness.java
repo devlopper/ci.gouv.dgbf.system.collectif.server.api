@@ -9,4 +9,7 @@ public interface LegislativeActBusiness extends SpecificBusiness<LegislativeAct>
 
 	String UPDATE_DEFAULT_VERSION_AUDIT_IDENTIFIER = "MISE_A_JOUR_VERSION_PAR_DEFAULT";
 	Result updateDefaultVersion(String legislativeActIdentifier,String legislativeActVersionIdentifier,String auditWho);
+	
+	String UPDATE_IN_PROGRESS_AUDIT_IDENTIFIER = "MISE_A_JOUR_EN_COURS";
+	Result updateInProgress(String legislativeActIdentifier,Boolean inProgress,String auditWho);
 }
