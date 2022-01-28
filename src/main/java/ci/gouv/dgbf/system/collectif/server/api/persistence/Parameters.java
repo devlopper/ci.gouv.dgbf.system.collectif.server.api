@@ -7,6 +7,7 @@ public interface Parameters {
 	String EXERCISE_IDENTIFIER = "exercice_id";
 	String EXERCISE_YEAR = "exercice_annee";
 	String LEGISLATIVE_ACT_IDENTIFIER = "col_id";
+	String LEGISLATIVE_ACT_IN_PROGRESS = "col_en_cours";
 	String LATEST_LEGISLATIVE_ACT = "col_dernier";
 	String LEGISLATIVE_ACT_VERSION_IDENTIFIER = "vcol_id";
 	String LATEST_LEGISLATIVE_ACT_VERSION = "vcol_dernier";
