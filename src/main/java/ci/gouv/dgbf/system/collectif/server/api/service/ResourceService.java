@@ -22,10 +22,10 @@ public interface ResourceService extends org.cyk.utility.service.SpecificService
 	
 	@POST
 	@Path("ajustements")
-	@Produces({MediaType.APPLICATION_JSON})
 	@Operation(description = "Ajuster une liste de ressources")
+	@Produces(MediaType.APPLICATION_JSON)
 	@APIResponses(value = {
-			@APIResponse(description = "Une liste de ressources",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de l'ajustement",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response adjust(List<ResourceDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ResourceDto.JSON___AUDIT_WHO__) String auditWho);

@@ -23,7 +23,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	@Path("ajustement")
 	@Operation(description = "Ajuster une liste de dépenses")
 	@APIResponses(value = {
-			@APIResponse(description = "Une liste de dépenses",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de l'ajustement",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response adjust(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
@@ -32,7 +32,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	@Path("ajustement-par-autorisation-engagement")
 	@Operation(description = "Ajuster une liste de dépenses par autorisations d'engagements")
 	@APIResponses(value = {
-			@APIResponse(description = "Une liste de dépenses",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de l'ajustement par autorisations d'engagements",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response adjustByEntryAuthorizations(List<ExpenditureDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
@@ -41,7 +41,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	@Path("importation")
 	@Operation(description = "Importer les dépenses")
 	@APIResponses(value = {
-			@APIResponse(description = "Une liste de dépenses",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de l'importation des dépenses",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response import_(@QueryParam(ExpenditureDto.JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER) String legislativeActVersionIdentifier,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
