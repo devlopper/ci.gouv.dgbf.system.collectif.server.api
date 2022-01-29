@@ -9,6 +9,7 @@ public interface LegislativeActDto extends IdentifiableSystemScalarStringIdentif
 	String JSON_NAME = "libelle";
 	String JSON_LEGISLATIVE_ACT_IDENTIFIER = "col_id";
 	String JSON_DEFAULT_VERSION_IDENTIFIER = "version_par_defaut_identifiant";
+	String JSON_IN_PROGRESS = "en_cours";
 	String JSON_BUDGETARY_ACT_VERSIONS = "versions_actes_budgetaires";
 	String JSON_EXERCISE = "exercice";
 	String JSON_EXERCISE_YEAR = "exercice_identifiant";
