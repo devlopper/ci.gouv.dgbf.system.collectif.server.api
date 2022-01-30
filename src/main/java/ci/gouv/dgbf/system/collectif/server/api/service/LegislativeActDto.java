@@ -12,7 +12,8 @@ public interface LegislativeActDto extends IdentifiableSystemScalarStringIdentif
 	String JSON_IN_PROGRESS = "en_cours";
 	String JSON_BUDGETARY_ACT_VERSIONS = "versions_actes_budgetaires";
 	String JSON_EXERCISE = "exercice";
-	String JSON_EXERCISE_YEAR = "exercice_identifiant";
+	String JSON_EXERCISE_IDENTIFIER = "exercice_identifiant";
+	String JSON_EXERCISE_YEAR = "exercice_annee";
 	String JSON___AUDIT__ = CommonDto.JSON___AUDIT__;
 	String JSON___AUDIT_WHO__ = CommonDto.JSON___AUDIT_WHO__;
 }

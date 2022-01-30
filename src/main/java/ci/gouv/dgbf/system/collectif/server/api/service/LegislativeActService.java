@@ -18,6 +18,16 @@ public interface LegislativeActService extends org.cyk.utility.service.SpecificS
 	String PATH = "collectifs_budgetaires";
 
 	@POST
+	@Path("/")
+	@Operation(description = "Création de collectif budgétaire")
+	@APIResponses(value = {
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de création de collectif budgétaire",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response create(@QueryParam(LegislativeActDto.JSON_CODE) String identifier,@QueryParam(LegislativeActDto.JSON_NAME) String name,@QueryParam(LegislativeActDto.JSON_EXERCISE_IDENTIFIER) String exerciseIdentifier
+			,@QueryParam(LegislativeActDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@POST
 	@Path("version-par-defaut")
 	@Operation(description = "Mise à jour de la version par défaut")
 	@APIResponses(value = {
