@@ -10,6 +10,12 @@ public interface LegislativeActDto extends IdentifiableSystemScalarStringIdentif
 	String JSON_LEGISLATIVE_ACT_IDENTIFIER = "col_id";
 	String JSON_DEFAULT_VERSION_IDENTIFIER = "version_par_defaut_identifiant";
 	String JSON_IN_PROGRESS = "en_cours";
+	String JSON_IN_PROGRESS_AS_STRING = "en_cours_chaine";
+	String JSON_ENTRY_AUTHORIZATION = CommonDto.JSON_ENTRY_AUTHORIZATION;
+	String JSON_PAYMENT_CREDIT = CommonDto.JSON_PAYMENT_CREDIT;
+	String JSONS_AMOUTNS = CommonDto.JSONS_AMOUTNS;
+	String JSONS_STRINGS = CommonDto.JSONS_STRINGS;
+	
 	String JSON_BUDGETARY_ACT_VERSIONS = "versions_actes_budgetaires";
 	String JSON_EXERCISE = "exercice";
 	String JSON_EXERCISE_IDENTIFIER = "exercice_identifiant";

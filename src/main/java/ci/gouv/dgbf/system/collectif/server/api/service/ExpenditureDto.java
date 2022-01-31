@@ -40,8 +40,8 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	String JSON_ACTIVITY_AS_STRING = "activite_string";
 	String JSON_NATURE_AS_STRING = "nature_string";
 	String JSON_ECONOMIC_NATURE_AS_STRING = "nature_economique_string";
-	String JSON_ENTRY_AUTHORIZATION = "autorisation_engagement";
-	String JSON_PAYMENT_CREDIT = "credit_paiement";
+	String JSON_ENTRY_AUTHORIZATION = CommonDto.JSON_ENTRY_AUTHORIZATION;
+	String JSON_PAYMENT_CREDIT = CommonDto.JSON_PAYMENT_CREDIT;
 	String JSON_BUDGETARY_ACT_AS_STRING = "acte_budgetaire_string";
 	String JSON_BUDGETARY_ACT_VERSION_AS_STRING = "version_acte_budgetaire_string";
 	String JSON_FUNDING_SOURCE_AS_STRING = "source_financement_string";
