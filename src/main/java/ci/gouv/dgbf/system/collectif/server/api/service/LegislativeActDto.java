@@ -9,6 +9,7 @@ public interface LegislativeActDto extends IdentifiableSystemScalarStringIdentif
 	String JSON_NAME = "libelle";
 	String JSON_LEGISLATIVE_ACT_IDENTIFIER = "col_id";
 	String JSON_DEFAULT_VERSION_IDENTIFIER = "version_par_defaut_identifiant";
+	String JSON_DEFAULT_VERSION_AS_STRING = "version_par_defaut_chaine";
 	String JSON_IN_PROGRESS = "en_cours";
 	String JSON_IN_PROGRESS_AS_STRING = "en_cours_chaine";
 	String JSON_ENTRY_AUTHORIZATION = CommonDto.JSON_ENTRY_AUTHORIZATION;
@@ -20,6 +21,7 @@ public interface LegislativeActDto extends IdentifiableSystemScalarStringIdentif
 	String JSON_EXERCISE = "exercice";
 	String JSON_EXERCISE_IDENTIFIER = "exercice_identifiant";
 	String JSON_EXERCISE_YEAR = "exercice_annee";
+	String JSON_EXERCISE_AS_STRING = "exercice_chaine";
 	String JSON___AUDIT__ = CommonDto.JSON___AUDIT__;
 	String JSON___AUDIT_WHO__ = CommonDto.JSON___AUDIT_WHO__;
 }
