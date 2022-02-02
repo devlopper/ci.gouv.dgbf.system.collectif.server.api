@@ -13,10 +13,14 @@ public interface ExpenditureAmountsEntryAuthorizationPaymentCredit {
 		return this;
 	}
 	
-	public default ExpenditureAmountsEntryAuthorizationPaymentCredit copy(Object[] array) {
-		getEntryAuthorization(Boolean.TRUE).copy(array,1);
-		getPaymentCredit(Boolean.TRUE).copy(array, 5);
+	public default ExpenditureAmountsEntryAuthorizationPaymentCredit copy(Object[] array,Integer index,Boolean isContainsExpectedAdjustment) {
+		index = getEntryAuthorization(Boolean.TRUE).copy(array,index,isContainsExpectedAdjustment);
+		getPaymentCredit(Boolean.TRUE).copy(array, index,isContainsExpectedAdjustment);
 		return this;
+	}
+	
+	public default ExpenditureAmountsEntryAuthorizationPaymentCredit copy(Object[] array) {
+		return copy(array, 1, null);
 	}
 	
 	public default ExpenditureAmountsEntryAuthorizationPaymentCredit computeActualMinusMovementIncludedPlusAdjustment() {

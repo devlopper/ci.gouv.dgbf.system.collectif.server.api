@@ -5,6 +5,8 @@ import ci.gouv.dgbf.system.collectif.server.api.persistence.Amounts;
 public interface AmountsDto extends Amounts {
 
 	String JSON_ADJUSTMENT = "ajustement";
+	String JSON_EXPECTED_ADJUSTMENT = "ajustement_attendu";
+	String JSON_EXPECTED_ADJUSTMENT_MINUS_ADJUSTMENT = "ajustement_attendu_moins_ajustement";
 	String JSON_INITIAL = "initial";
 	String JSON_MOVEMENT = "mouvement";
 	String JSON_MOVEMENT_INCLUDED = "mouvement_inclu";

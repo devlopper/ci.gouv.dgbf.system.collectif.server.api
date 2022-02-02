@@ -28,6 +28,12 @@ public interface Amounts {
 	Long getAdjustment();
 	Amounts setAdjustment(Long adjustment);
 	
+	Long getExpectedAdjustment();
+	Amounts setExpectedAdjustment(Long expectedAdjustment);
+	
+	Long getExpectedAdjustmentMinusAdjustment();
+	Amounts setExpectedAdjustmentMinusAdjustment(Long expectedAdjustmentMinusAdjustment);
+	
 	Long getActualMinusMovementIncludedPlusAdjustment();
 	Amounts setActualMinusMovementIncludedPlusAdjustment(Long actualMinusMovementIncludedPlusAdjustment);
 	
@@ -38,6 +44,10 @@ public interface Amounts {
 		setAdjustment(0l);
 		setActualPlusAdjustment(0l);
 		setAvailable(0l);
+		
+		setExpectedAdjustment(0l);
+		setExpectedAdjustmentMinusAdjustment(0l);
+		
 		return this;
 	}
 	
@@ -56,17 +66,22 @@ public interface Amounts {
 		return this;
 	}
 	
-	public default Amounts copy(Object[] array,Integer index) {
+	public default Amounts computeExpectedAdjustmentMinusAdjustment() {
+		setExpectedAdjustmentMinusAdjustment(NumberHelper.getLong(NumberHelper.subtract(getExpectedAdjustment(),getAdjustment())));
+		return this;
+	}
+	
+	public default Integer copy(Object[] array,Integer index,Boolean isContainsExpectedAdjustment) {
 		setInitial(NumberHelper.getLong(array[index++],0l));
 		setActual(NumberHelper.getLong(array[index++],0l));
 		computeMovement();
 		setAdjustment(NumberHelper.getLong(array[index++],0l));
 		computeActualPlusAdjustment();
 		setAvailable(NumberHelper.getLong(array[index++],0l));
-		return this;
-	}
-	
-	public default Amounts copy(Object[] array) {
-		return copy(array, 1);
+		if(Boolean.TRUE.equals(isContainsExpectedAdjustment)) {
+			setExpectedAdjustment(NumberHelper.getLong(array[index++],0l));
+			computeExpectedAdjustmentMinusAdjustment();
+		}
+		return index;
 	}
 }
