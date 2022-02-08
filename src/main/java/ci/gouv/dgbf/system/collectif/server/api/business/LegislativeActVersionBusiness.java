@@ -14,4 +14,6 @@ public interface LegislativeActVersionBusiness extends SpecificBusiness<Legislat
 	String CREATE_AUDIT_IDENTIFIER = "CREATION_VERSION_COLLECTIF_BUDGETAIRE";
 	Result create(String code,String name,Byte number,String legislativeActIdentifier,String auditWho,String auditFunctionality,LocalDateTime auditWhen,EntityManager entityManager);	
 	Result create(String code,String name,Byte number,String legislativeActIdentifier,String auditWho);
+	
+	//Result generateActs(String identifier,String auditWho);
 }
