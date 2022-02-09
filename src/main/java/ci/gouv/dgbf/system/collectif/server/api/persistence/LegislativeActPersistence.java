@@ -4,6 +4,4 @@ import org.cyk.utility.persistence.SpecificPersistence;
 
 public interface LegislativeActPersistence extends SpecificPersistence<LegislativeAct> {
 
-	LegislativeAct readUsingNamedQueryReadByIdentifier(String identifier);
-	
 }
