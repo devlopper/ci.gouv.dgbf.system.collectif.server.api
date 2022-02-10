@@ -19,4 +19,5 @@ public interface LegislativeActVersion extends IdentifiableSystemScalarStringIde
 	LegislativeActVersion setCreationDate(LocalDateTime creationDate);
 	
 	String NAME = "Version collectif budgétaire";
+	String NAME_PLURAL = "Versions collectifs budgétaires";
 }

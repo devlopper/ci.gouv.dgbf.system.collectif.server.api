@@ -16,12 +16,16 @@ public interface Parameters {
 	String BUDGET_SPECIALIZATION_UNIT_IDENTIFIER = "usb_id";
 	String ACTION_IDENTIFIER = "a_id";
 	String ACTIVITY_IDENTIFIER = "as_id";
+	String ACTIVITIES_IDENTIFIERS = "as_ids";
 	String RESOURCE_ACTIVITY_IDENTIFIER = "ar_id";
 	String EXPENDITURE_NATURE_IDENTIFIER = "nd_id";
 	String ACTIVITY_CATEGORY_IDENTIFIER = "ca_id";
-	String ECONOMIC_NATURE_IDENTIFIER = "ne_id";	
+	String ECONOMIC_NATURE_IDENTIFIER = "ne_id";
+	String ECONOMIC_NATURES_IDENTIFIERS = "ne_ids";
 	String FUNDING_SOURCE_IDENTIFIER = "sf_id";
+	String FUNDING_SOURCES_IDENTIFIERS = "sf_ids";
 	String LESSOR_IDENTIFIER = "b_id";
+	String LESSORS_IDENTIFIERS = "b_ids";
 	String REGULATORY_ACT_INCLUDED = "ar_inclus";
 	String REGULATORY_ACT_IDENTIFIER = "ar_id";
 	String REGULATORY_ACT_IDENTIFIERS = "ar_ids";
