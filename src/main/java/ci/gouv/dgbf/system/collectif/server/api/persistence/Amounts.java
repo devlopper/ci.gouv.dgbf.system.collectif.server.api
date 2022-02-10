@@ -71,13 +71,15 @@ public interface Amounts {
 		return this;
 	}
 	
-	public default Integer copy(Object[] array,Integer index,Boolean isContainsExpectedAdjustment) {
+	public default Integer copy(Object[] array,Integer index,Boolean isContainsAvailable,Boolean isContainsExpectedAdjustment) {
 		setInitial(NumberHelper.getLong(array[index++],0l));
 		setActual(NumberHelper.getLong(array[index++],0l));
 		computeMovement();
 		setAdjustment(NumberHelper.getLong(array[index++],0l));
 		computeActualPlusAdjustment();
-		setAvailable(NumberHelper.getLong(array[index++],0l));
+		if(Boolean.TRUE.equals(isContainsAvailable)) {
+			setAvailable(NumberHelper.getLong(array[index++],0l));
+		}
 		if(Boolean.TRUE.equals(isContainsExpectedAdjustment)) {
 			setExpectedAdjustment(NumberHelper.getLong(array[index++],0l));
 			computeExpectedAdjustmentMinusAdjustment();

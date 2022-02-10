@@ -47,6 +47,7 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	String JSON_FUNDING_SOURCE_AS_STRING = "source_financement_string";
 	String JSON_LESSOR_AS_STRING = "bailleur_string";
 	String JSONS_AMOUTNS = "montants";
+	String JSONS_AMOUTNS_WITHOUT_AVAILABLE = "montants_sans_disponible";
 	String JSONS_STRINGS = "chaines";
 	String JSONS_IDENTIFIERS = "identifiants";
 	
