@@ -26,4 +26,13 @@ public interface LegislativeActVersionService extends org.cyk.utility.service.Sp
 	})
 	Response create(@QueryParam(LegislativeActVersionDto.JSON_CODE) String identifier,@QueryParam(LegislativeActVersionDto.JSON_NAME) String name,@QueryParam(LegislativeActVersionDto.JSON_NUMBER) Byte number
 			,@QueryParam(LegislativeActVersionDto.JSON_LEGISLATIVE_ACT_IDENTIFIER) String actIdentifier,@QueryParam(LegislativeActVersionDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@POST
+	@Path("/duplication")
+	@Operation(description = "Duplication de version collectif budgétaire")
+	@APIResponses(value = {
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de duplication de version collectif budgétaire",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response duplicate(@QueryParam(LegislativeActVersionDto.JSON_CODE) String identifier,@QueryParam(LegislativeActVersionDto.JSON___AUDIT_WHO__) String auditWho);
 }
