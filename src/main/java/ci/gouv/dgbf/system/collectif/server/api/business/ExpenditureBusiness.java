@@ -27,5 +27,9 @@ public interface ExpenditureBusiness extends SpecificBusiness<Expenditure> {
 	Result adjustByEntryAuthorizations(Map<String,Long> entryAuthorizations,String auditWho);
 
 	String IMPORT_AUDIT_IDENTIFIER = "IMPORTATION_DEPENSES";
+	Result import_(String legislativeActVersionIdentifier,Boolean throwIfRunning,String auditWho);
 	Result import_(String legislativeActVersionIdentifier,String auditWho);
+	
+	String COPY_ADJUSTMENTS_AUDIT_IDENTIFIER = "COPIE_AJUSTEMENTS_DEPENSES";
+	Result copyAdjustments(String legislativeActVersionIdentifier,String legislativeActVersionSourceIdentifier,String auditWho);
 }
