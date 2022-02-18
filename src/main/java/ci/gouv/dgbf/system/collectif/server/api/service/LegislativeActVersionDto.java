@@ -21,6 +21,8 @@ public interface LegislativeActVersionDto {
 	String JSON_CODE = "code";
 	String JSON_NAME = "libelle";
 	String JSON_NUMBER = "numero";
+	String JSON_IS_DEFAULT_VERSION = "est_version_par_defaut";
+	String JSON_IS_DEFAULT_VERSION_AS_STRING = "est_version_par_defaut_chaine";
 	String JSON_LEGISLATIVE_ACT = "acte_budgetaire";
 	String JSON_LEGISLATIVE_ACT_IDENTIFIER = "identifiant_acte_budgetaire";
 	String JSON_LEGISLATIVE_ACT_AS_STRING = "acte_budgetaire_chaine";
