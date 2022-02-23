@@ -37,6 +37,9 @@ public interface Amounts {
 	Long getActualMinusMovementIncludedPlusAdjustment();
 	Amounts setActualMinusMovementIncludedPlusAdjustment(Long actualMinusMovementIncludedPlusAdjustment);
 	
+	Long getAvailableMinusMovementIncludedPlusAdjustment();
+	Amounts setAvailableMinusMovementIncludedPlusAdjustment(Long availableMinusMovementIncludedPlusAdjustment);
+	
 	public default Amounts setZero() {
 		setInitial(0l);
 		setActual(0l);
@@ -62,7 +65,12 @@ public interface Amounts {
 	}
 	
 	public default Amounts computeActualMinusMovementIncludedPlusAdjustment() {
-		setActualMinusMovementIncludedPlusAdjustment(NumberHelper.getLong(NumberHelper.subtract(getActualPlusAdjustment(),getMovementIncluded())));
+		setActualMinusMovementIncludedPlusAdjustment(NumberHelper.getLong(NumberHelper.add(NumberHelper.subtract(getActual(),getMovementIncluded()),getAdjustment())));
+		return this;
+	}
+	
+	public default Amounts computeAvailableMinusMovementIncludedPlusAdjustment() {
+		setAvailableMinusMovementIncludedPlusAdjustment(NumberHelper.getLong(NumberHelper.add(NumberHelper.subtract(getAvailable(),getMovementIncluded()),getAdjustment())));
 		return this;
 	}
 	
