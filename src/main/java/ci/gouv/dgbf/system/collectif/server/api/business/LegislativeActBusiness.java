@@ -1,5 +1,7 @@
 package ci.gouv.dgbf.system.collectif.server.api.business;
 
+import java.time.LocalDate;
+
 import org.cyk.utility.business.Result;
 import org.cyk.utility.business.SpecificBusiness;
 
@@ -8,7 +10,7 @@ import ci.gouv.dgbf.system.collectif.server.api.persistence.LegislativeAct;
 public interface LegislativeActBusiness extends SpecificBusiness<LegislativeAct> {
 
 	String CREATE_AUDIT_IDENTIFIER = "CREATION_COLLECTIF_BUDGETAIRE";
-	Result create(String code,String name,String exerciseIdentifier,String auditWho);
+	Result create(String code,String name,String exerciseIdentifier,LocalDate date,String auditWho);
 	
 	String UPDATE_DEFAULT_VERSION_AUDIT_IDENTIFIER = "MISE_A_JOUR_VERSION_PAR_DEFAUT";
 	Result updateDefaultVersion(String legislativeActVersionIdentifier,String auditWho);
