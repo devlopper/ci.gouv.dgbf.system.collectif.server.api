@@ -27,9 +27,13 @@ public interface Parameters {
 	String FUNDING_SOURCES_IDENTIFIERS = "sf_ids";
 	String LESSOR_IDENTIFIER = "b_id";
 	String LESSORS_IDENTIFIERS = "b_ids";
+	
 	String REGULATORY_ACT_INCLUDED = "ar_inclus";
 	String REGULATORY_ACT_IDENTIFIER = "ar_id";
 	String REGULATORY_ACT_IDENTIFIERS = "ar_ids";
+	String REGULATORY_ACT_DATE_GREATER_THAN_OR_EQUAL = "date_pge";
+	String REGULATORY_ACT_DATE_LOWER_THAN_OR_EQUAL = "date_ppe";
+	
 	String ADJUSTMENTS_EQUAL_ZERO = "ae_et_cp_e_zero";
 	String ADJUSTMENTS_NOT_EQUAL_ZERO = "ae_et_cp_ne_zero";
 	String INCLUDED_MOVEMENT_NOT_EQUAL_ZERO = "mi_ne_zero";

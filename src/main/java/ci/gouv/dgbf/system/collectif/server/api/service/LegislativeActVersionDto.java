@@ -23,9 +23,10 @@ public interface LegislativeActVersionDto {
 	String JSON_NUMBER = "numero";
 	String JSON_IS_DEFAULT_VERSION = "est_version_par_defaut";
 	String JSON_IS_DEFAULT_VERSION_AS_STRING = "est_version_par_defaut_chaine";
-	String JSON_LEGISLATIVE_ACT = "acte_budgetaire";
-	String JSON_LEGISLATIVE_ACT_IDENTIFIER = "identifiant_acte_budgetaire";
-	String JSON_LEGISLATIVE_ACT_AS_STRING = "acte_budgetaire_chaine";
+	String JSON_LEGISLATIVE_ACT = "col";
+	String JSON_LEGISLATIVE_ACT_IDENTIFIER = "col_id";
+	String JSON_LEGISLATIVE_ACT_DATE_AS_TIMESTAMP = "col_date_horodatage";
+	String JSON_LEGISLATIVE_ACT_AS_STRING = "col_chaine";
 	String JSON_GENERATED_ACT_COUNT = "nombre_acte_genere";
 	String JSON_ACT_GENERATABLE = "acte_generable";
 	String JSON_ACT_GENERATABLE_AS_STRING = "acte_generable_chaine";
