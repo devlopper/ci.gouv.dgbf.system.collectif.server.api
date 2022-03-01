@@ -26,6 +26,8 @@ public interface LegislativeActVersionDto {
 	String JSON_LEGISLATIVE_ACT = "col";
 	String JSON_LEGISLATIVE_ACT_IDENTIFIER = "col_id";
 	String JSON_LEGISLATIVE_ACT_DATE_AS_TIMESTAMP = "col_date_horodatage";
+	String JSON_LEGISLATIVE_ACT_FROM_DATE_AS_TIMESTAMP = "col_date_debut_horodatage";
+	String JSONS_LEGISLATIVE_ACT_FROM_DATE_AS_TIMESTAMP_DATE_AS_TIMESTAMP = "col_date_debut_horodatage_date_horodatage";
 	String JSON_LEGISLATIVE_ACT_AS_STRING = "col_chaine";
 	String JSON_GENERATED_ACT_COUNT = "nombre_acte_genere";
 	String JSON_ACT_GENERATABLE = "acte_generable";

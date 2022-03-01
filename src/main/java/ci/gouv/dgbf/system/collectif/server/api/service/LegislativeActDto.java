@@ -25,6 +25,7 @@ public interface LegislativeActDto extends IdentifiableSystemScalarStringIdentif
 	String JSON_EXERCISE_AS_STRING = "exercice_chaine";
 	String JSON_DATE_AS_TIMESTAMP = "date_horodatage";
 	String JSON_DATE_AS_STRING = "date_chaine";
+	String JSON_FROM_DATE_AS_STRING = "date_debut_chaine";
 	String JSON___AUDIT__ = CommonDto.JSON___AUDIT__;
 	String JSON___AUDIT_WHO__ = CommonDto.JSON___AUDIT_WHO__;
 }
