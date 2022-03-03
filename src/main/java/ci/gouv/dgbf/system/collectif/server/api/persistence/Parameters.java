@@ -3,6 +3,9 @@ package ci.gouv.dgbf.system.collectif.server.api.persistence;
 public interface Parameters {
 
 	String SEARCH = "recherche";
+	String __AUDIT_IDENTIFIER__ = "audit_id";
+	String __AUDIT_WHO__ = "audit_qui";
+	String __AUDIT_WHEN__ = "audit_quand";
 	
 	String EXERCISE_IDENTIFIER = "exercice_id";
 	String EXERCISE_YEAR = "exercice_annee";
