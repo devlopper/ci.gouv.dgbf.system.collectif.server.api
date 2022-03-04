@@ -1,6 +1,8 @@
 package ci.gouv.dgbf.system.collectif.server.api.persistence;
 
-public interface Resource {
+import org.cyk.utility.persistence.entity.IdentifiableSystemScalarString;
+
+public interface Resource extends IdentifiableSystemScalarString {
 
 	String getActivityIdentifier();
 	Resource setActivityIdentifier(String activityIdentifier);

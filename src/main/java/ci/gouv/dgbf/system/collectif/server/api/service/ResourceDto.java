@@ -37,6 +37,7 @@ public interface ResourceDto extends IdentifiableSystemScalarString {
 	String JSON_BUDGETARY_ACT_AS_STRING = "acte_budgetaire_string";
 	String JSON_BUDGETARY_ACT_VERSION_AS_STRING = "version_acte_budgetaire_string";
 	String JSONS_AMOUTNS = "montants";
+	String JSONS_AMOUTNS_WITHOUT_AVAILABLE = "montants_sans_disponible";
 	String JSONS_STRINGS = "chaines";
 	String JSONS_IDENTIFIERS = "identifiants";
 	
