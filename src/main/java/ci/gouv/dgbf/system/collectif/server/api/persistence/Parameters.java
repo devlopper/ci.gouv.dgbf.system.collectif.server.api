@@ -45,4 +45,6 @@ public interface Parameters {
 	String GENERATED_ACT_IDENTIFIER = "ag_id";
 	String GENERATED_ACT_IDENTIFIERS = "ag_ids";
 	String GENERATED_ACT_EXPENDITURE_EXISTS = "d_ag_existe";
+	
+	String AMOUNT_SUMABLE = "amount_sumable";
 }
