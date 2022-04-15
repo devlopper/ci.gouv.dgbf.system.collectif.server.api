@@ -31,6 +31,8 @@ public interface Parameters {
 	String LESSOR_IDENTIFIER = "b_id";
 	String LESSORS_IDENTIFIERS = "b_ids";
 	
+	String EXPENDITURES_IDENTIFIERS = "d_ids";
+	
 	String REGULATORY_ACT_INCLUDED = "ar_inclus";
 	String REGULATORY_ACT_IDENTIFIER = "ar_id";
 	String REGULATORY_ACT_IDENTIFIERS = "ar_ids";
@@ -47,6 +49,9 @@ public interface Parameters {
 	String GENERATED_ACT_EXPENDITURE_EXISTS = "d_ag_existe";
 	
 	String AMOUNT_SUMABLE = "montant_sommable";
+	String AMOUNT_SUMABLE_WITHOUT_INCLUDED_MOVEMENT_AND_AVAILABLE = "montant_sommable_sans_mouvement_inclus_et_disponible";
+	String AMOUNT_SUMABLE_WITH_INCLUDED_MOVEMENT_ONLY = "montant_sommable_avec_mouvement_inclus_seulement";
+	String AMOUNT_SUMABLE_WITH_AVAILABLE_ONLY = "montant_sommable_avec_disponible_seulement";
 	String EXPENDITURE_AMOUNT_SUMABLE = "montant_depense_sommable";
 	String RESOURCE_AMOUNT_SUMABLE = "montant_ressource_sommable";
 }

@@ -48,6 +48,9 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	String JSON_LESSOR_AS_STRING = "bailleur_string";
 	String JSONS_AMOUTNS = "montants";
 	String JSONS_AMOUTNS_WITHOUT_AVAILABLE = "montants_sans_disponible";
+	String JSONS_AMOUTNS_WITHOUT_INCLUDED_MOVEMENT_AND_AVAILABLE = "montants_sans_mouvement_inclus_et_disponible";
+	String JSONS_AMOUTNS_WITH_INCLUDED_MOVEMENT_ONLY = "montants_avec_mouvement_inclus_seulement";
+	String JSONS_AMOUTNS_WITH_AVAILABLE_ONLY = "montants_avec_disponible_seulement";
 	String JSONS_STRINGS = "chaines";
 	String JSONS_IDENTIFIERS = "identifiants";
 	
