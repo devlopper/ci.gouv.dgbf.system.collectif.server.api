@@ -54,6 +54,20 @@ public interface Amounts {
 		return this;
 	}
 	
+	public default Amounts copyMovementIncluded(Amounts amounts) {
+		if(amounts == null)
+			return this;
+		setMovementIncluded(amounts.getMovementIncluded());
+		return this;
+	}
+	
+	public default Amounts copyAvailable(Amounts amounts) {
+		if(amounts == null)
+			return this;
+		setAvailable(amounts.getAvailable());
+		return this;
+	}
+	
 	public default Amounts computeMovement() {
 		setMovement(NumberHelper.getLong(NumberHelper.subtract(getActual(),getInitial())));
 		return this;

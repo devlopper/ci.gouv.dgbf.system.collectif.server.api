@@ -52,6 +52,7 @@ public interface Parameters {
 	String AMOUNT_SUMABLE_WITHOUT_INCLUDED_MOVEMENT_AND_AVAILABLE = "montant_sommable_sans_mouvement_inclus_et_disponible";
 	String AMOUNT_SUMABLE_WITH_INCLUDED_MOVEMENT_ONLY = "montant_sommable_avec_mouvement_inclus_seulement";
 	String AMOUNT_SUMABLE_WITH_AVAILABLE_ONLY = "montant_sommable_avec_disponible_seulement";
+	String AMOUNT_SUMABLE_WITH_INCLUDED_MOVEMENT_AND_AVAILABLE_ONLY = "montant_sommable_avec_mouvement_inclus_et_disponible_seulement";
 	String EXPENDITURE_AMOUNT_SUMABLE = "montant_depense_sommable";
 	String RESOURCE_AMOUNT_SUMABLE = "montant_ressource_sommable";
 }
