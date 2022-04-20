@@ -13,6 +13,9 @@ public interface ActivityDto extends IdentifiableSystemScalarStringIdentifiableB
 	AdministrativeUnitDto getAdministrativeUnit();
 	ActivityDto setAdministrativeUnit(AdministrativeUnitDto administrativeUnit);
 	
+	BudgetCategoryDto getBudgetCategory();
+	ActivityDto setBudgetCategory(BudgetCategoryDto budgetCategory);
+	
 	BudgetSpecializationUnitDto getBudgetSpecializationUnit();
 	ActivityDto setBudgetSpecializationUnit(BudgetSpecializationUnitDto budgetSpecializationUnit);
 	
@@ -34,6 +37,7 @@ public interface ActivityDto extends IdentifiableSystemScalarStringIdentifiableB
 	String JSON_EXPENDITURE_NATURE = "nature_depense";
 	String JSON_SECTION = "section";
 	String JSON_ADMINISTRATIVE_UNIT = "unite_administrative";
+	String JSON_BUDGET_CATEGORY = "categorie_budget";
 	String JSON_BUDGET_SPECIALIZATION_UNIT = "unite_specialisation_budget";
 	String JSON_ACTION = "action";
 	String JSON_ECONOMIC_NATURES = "natures_economiques";
@@ -41,4 +45,5 @@ public interface ActivityDto extends IdentifiableSystemScalarStringIdentifiableB
 	String JSON_LESSORS = "bailleurs";
 	
 	String JSONS_SECTION_ADMINISTRATIVE_UNIT_EXPENDITURE_NATURE_BUDGET_SPECIALIZATION_UNIT_ACTION = "nd_section_ua_usb_action";
+	String JSONS_BUDGET_CATEGORY_SECTION_ADMINISTRATIVE_UNIT_EXPENDITURE_NATURE_BUDGET_SPECIALIZATION_UNIT_ACTION = "cb_section_ua_nd_usb_action";
 }

@@ -4,6 +4,7 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 
 public interface ExpenditureNature extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
+	String NAME = "Nature de dépense";
 	String CODE_INVESTMENT = "4";
 	
 }
