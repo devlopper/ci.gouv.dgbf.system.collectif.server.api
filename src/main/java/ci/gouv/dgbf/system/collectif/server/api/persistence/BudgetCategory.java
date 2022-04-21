@@ -4,4 +4,6 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 
 public interface BudgetCategory extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
+	String NAME = "Catégorie de budget";
+	String INITIALS = "C.B.";
 }

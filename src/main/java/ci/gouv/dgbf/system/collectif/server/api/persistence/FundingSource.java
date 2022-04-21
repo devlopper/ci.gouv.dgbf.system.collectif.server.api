@@ -4,4 +4,6 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 
 public interface FundingSource extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 
+	String INITIALS = "S.F.";
+	String NAME = "Source de financement";
 }
