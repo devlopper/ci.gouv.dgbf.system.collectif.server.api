@@ -4,6 +4,6 @@ import javax.ws.rs.Path;
 
 @Path(ExpenditureNatureService.PATH)
 public interface ExpenditureNatureService extends org.cyk.utility.service.SpecificService<ExpenditureNatureDto> {
-	String PATH = "natures_depenses";
+	String PATH = "natures-depenses";
 	
 }

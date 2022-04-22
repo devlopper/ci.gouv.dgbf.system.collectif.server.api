@@ -16,7 +16,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 @Path(GeneratedActService.PATH)
 @Tag(name = "Actes générés",description = "Gestion des actes générés")
 public interface GeneratedActService extends org.cyk.utility.service.SpecificService<GeneratedActDto> {
-	String PATH = "actes_generes";
+	String PATH = "actes-generes";
 	
 	@POST
 	@Path("generation-par-version-collectif-budgetaire")

@@ -16,7 +16,7 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
 @Path(RegulatoryActService.PATH)
 public interface RegulatoryActService extends org.cyk.utility.service.SpecificService<RegulatoryActDto> {
-	String PATH = "actes_gestion";
+	String PATH = "actes-gestion";
 	
 	@POST
 	@Path("inclusion")

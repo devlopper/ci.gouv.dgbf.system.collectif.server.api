@@ -4,5 +4,5 @@ import javax.ws.rs.Path;
 
 @Path(ResourceActivityService.PATH)
 public interface ResourceActivityService extends org.cyk.utility.service.SpecificService<ResourceActivityDto> {
-	String PATH = "activites_recette";
+	String PATH = "activites-ressource";
 }

@@ -4,5 +4,5 @@ import javax.ws.rs.Path;
 
 @Path(FundingSourceService.PATH)
 public interface FundingSourceService extends org.cyk.utility.service.SpecificService<FundingSourceDto> {
-	String PATH = "sources_financements";
+	String PATH = "sources-financements";
 }

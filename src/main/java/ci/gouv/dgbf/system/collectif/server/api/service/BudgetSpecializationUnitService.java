@@ -4,6 +4,6 @@ import javax.ws.rs.Path;
 
 @Path(BudgetSpecializationUnitService.PATH)
 public interface BudgetSpecializationUnitService extends org.cyk.utility.service.SpecificService<BudgetSpecializationUnitDto> {
-	String PATH = "unites_specialisations_budgets";
+	String PATH = "unites-specialisations-budgets";
 	
 }

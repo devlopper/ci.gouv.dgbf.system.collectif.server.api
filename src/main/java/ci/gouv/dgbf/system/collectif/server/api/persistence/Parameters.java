@@ -15,6 +15,7 @@ public interface Parameters {
 	String LEGISLATIVE_ACT_VERSION_IDENTIFIER = "vcol_id";
 	String LATEST_LEGISLATIVE_ACT_VERSION = "vcol_dernier";
 	String DEFAULT_LEGISLATIVE_ACT_VERSION_IN_LATEST_LEGISLATIVE_ACT = "vcol_par_defaut_dans_"+LATEST_LEGISLATIVE_ACT;
+	String DEFAULT_VALUE = "valeur_par_defaut";
 	String SECTION_IDENTIFIER = "s_id";
 	String ADMINISTRATIVE_UNIT_IDENTIFIER = "ua_id";
 	String BUDGET_CATEGORY_IDENTIFIER = "cb_id";

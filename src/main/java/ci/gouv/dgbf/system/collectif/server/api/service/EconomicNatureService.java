@@ -4,5 +4,5 @@ import javax.ws.rs.Path;
 
 @Path(EconomicNatureService.PATH)
 public interface EconomicNatureService extends org.cyk.utility.service.SpecificService<EconomicNatureDto> {
-	String PATH = "natures_economiques";
+	String PATH = "natures-economiques";
 }

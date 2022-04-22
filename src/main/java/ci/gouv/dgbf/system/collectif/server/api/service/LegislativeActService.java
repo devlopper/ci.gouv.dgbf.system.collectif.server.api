@@ -15,7 +15,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 @Path(LegislativeActService.PATH)
 @Tag(name = "Collectifs budgétaires",description = "Gestion des collectifs budgétaires")
 public interface LegislativeActService extends org.cyk.utility.service.SpecificService<LegislativeActDto> {
-	String PATH = "collectifs_budgetaires";
+	String PATH = "collectifs-budgetaires";
 
 	@POST
 	@Path("/")
