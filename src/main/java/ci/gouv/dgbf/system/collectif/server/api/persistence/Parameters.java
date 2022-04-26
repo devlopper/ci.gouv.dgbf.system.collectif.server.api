@@ -2,6 +2,8 @@ package ci.gouv.dgbf.system.collectif.server.api.persistence;
 
 public interface Parameters {
 
+	String IDENTIFIERS = "ids";
+	String USER_NAME = "nom_utilisateur";
 	String SEARCH = "recherche";
 	String __AUDIT_IDENTIFIER__ = "audit_id";
 	String __AUDIT_WHO__ = "audit_qui";
