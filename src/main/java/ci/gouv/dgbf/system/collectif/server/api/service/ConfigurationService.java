@@ -6,6 +6,7 @@ import javax.json.bind.annotation.JsonbProperty;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,6 +35,16 @@ public interface ConfigurationService {
 			,@APIResponse(description = "Erreur lors de l'obtention de la configuration du système",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	ConfigurationDto get();
+	
+	@GET
+	@Path("/visibilite-type-domaine-verifiable")
+	@Produces({MediaType.TEXT_PLAIN})
+	@Operation(description = "Obtenir si oui ou non la visibilité est vérifiable pour un domaine donné")
+	@APIResponses(value = {
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de l'obtention de oui ou non la visibilité est vérifiable pour un domaine donné",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Boolean isScopeTypeVisibilityCheckable(@QueryParam("type-domaine") String scopeType);
 	
 	/**/
 
