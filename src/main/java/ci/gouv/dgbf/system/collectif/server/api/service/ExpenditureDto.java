@@ -12,8 +12,20 @@ import lombok.experimental.Accessors;
 
 public interface ExpenditureDto extends IdentifiableSystemScalarString {
 
+	String getActivityCode();
+	ExpenditureDto setActivityCode(String activityCode);
+	
 	String getActivityAsString();
 	ExpenditureDto setActivityAsString(String activityAsString);
+	
+	String getEconomicNatureCode();
+	ExpenditureDto setEconomicNatureCode(String economicNatureCode);
+	
+	String getFundingSourceCode();
+	ExpenditureDto setFundingSourceCode(String fundingSourceCode);
+	
+	String getLessorCode();
+	ExpenditureDto setLessorCode(String lessorCode);
 	
 	String getEconomicNatureAsString();
 	ExpenditureDto setEconomicNatureAsString(String economicNatureAsString);
@@ -37,14 +49,18 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	String JSON_ADMINISTRATIVE_UNIT_AS_STRING = "unite_administrative_string";
 	String JSON_BUDGET_SPECIALIZATION_UNIT_AS_STRING = "unite_specialisation_budget_string";
 	String JSON_ACTION_AS_STRING = "action_string";
+	String JSON_ACTIVITY_CODE = "activite_code";
 	String JSON_ACTIVITY_AS_STRING = "activite_string";
 	String JSON_NATURE_AS_STRING = "nature_string";
+	String JSON_ECONOMIC_NATURE_CODE = "nature_economique_code";
 	String JSON_ECONOMIC_NATURE_AS_STRING = "nature_economique_string";
 	String JSON_ENTRY_AUTHORIZATION = CommonDto.JSON_ENTRY_AUTHORIZATION;
 	String JSON_PAYMENT_CREDIT = CommonDto.JSON_PAYMENT_CREDIT;
 	String JSON_BUDGETARY_ACT_AS_STRING = "acte_budgetaire_string";
 	String JSON_BUDGETARY_ACT_VERSION_AS_STRING = "version_acte_budgetaire_string";
 	String JSON_FUNDING_SOURCE_AS_STRING = "source_financement_string";
+	String JSON_FUNDING_SOURCE_CODE = "source_financement_code";
+	String JSON_LESSOR_CODE = "bailleur_code";
 	String JSON_LESSOR_AS_STRING = "bailleur_string";
 	String JSONS_AMOUTNS = "montants";
 	String JSONS_AMOUTNS_WITHOUT_AVAILABLE = "montants_sans_disponible";
@@ -75,5 +91,14 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 		
 		@JsonbProperty(value = "ajustement_"+PaymentCreditDto.JSON_PAYMENT_CREDIT)
 		private Long paymentCredit;
+	}
+	
+	@Getter @Setter @Accessors(chain=true)
+	public static class LoadDto implements Serializable {
+		
+		@JsonbProperty(value = "activite") private String activity;
+		@JsonbProperty(value = "nature_economique") private String economicNature;
+		@JsonbProperty(value = "source_finanement") private String fundingSource;
+		@JsonbProperty(value = "bailleur") private String lessor;
 	}
 }

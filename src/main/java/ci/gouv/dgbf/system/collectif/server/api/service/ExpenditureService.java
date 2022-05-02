@@ -24,6 +24,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	
 	@POST
 	@Path("ajustement")
+	@Produces( MediaType.TEXT_PLAIN)
 	@Operation(description = "Ajuster une liste de dépenses")
 	@APIResponses(value = {
 			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
@@ -33,6 +34,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	
 	@POST
 	@Path("ajustement-par-autorisation-engagement")
+	@Produces( MediaType.TEXT_PLAIN)
 	@Operation(description = "Ajuster une liste de dépenses par autorisations d'engagements")
 	@APIResponses(value = {
 			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
@@ -42,6 +44,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	
 	@POST
 	@Path("importation")
+	@Produces( MediaType.TEXT_PLAIN)
 	@Operation(description = "Importer les dépenses")
 	@APIResponses(value = {
 			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
@@ -51,11 +54,28 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	
 	@GET
 	@Path("sommation-montants")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces( MediaType.APPLICATION_JSON)
 	@Operation(description = "Sommer les montants")
 	@APIResponses(value = {
 			@APIResponse(description = "Sommation des montants obtenue",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 			,@APIResponse(description = "Erreur lors de la sommation des montants",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response getAmountsSums(@Parameter(name = PARAMETER_NAME_FILTER,description = PARAMETER_NAME_FILTER_DESCRIPTION_FRENCH) @QueryParam(PARAMETER_NAME_FILTER) String filter);
+	
+	@POST
+	@Path("verification-chargeable")
+	@Produces( MediaType.TEXT_PLAIN)
+	@Operation(description = "Verifier les dépenses chargeables")
+	@APIResponses(value = {
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de la vérification des dépenses chargeables",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response verifyLoadable(List<ExpenditureDto.LoadDto> loads);
+	
+	/**/
+	
+	String HEADER_UNKNOWN_ACTIVITIES_CODES = "codes_activites_inconnus";
+	String HEADER_UNKNOWN_ECONOMICS_NATURES_CODES = "codes_natures_economiques_inconnus";
+	String HEADER_UNKNOWN_FUNDINGS_SOURCES_CODES = "codes_sources_financements_inconnus";
+	String HEADER_UNKNOWN_LESSORS_CODES = "codes_bailleurs_inconnus";
 }
