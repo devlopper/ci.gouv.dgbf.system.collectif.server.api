@@ -7,17 +7,29 @@ public interface Expenditure extends IdentifiableSystemScalarString {
 	String getActivityIdentifier();
 	Expenditure setActivityIdentifier(String activityIdentifier);
 	
+	String getActivityCode();
+	
 	String getEconomicNatureIdentifier();
 	Expenditure setEconomicNatureIdentifier(String economicNatureIdentifier);
+	
+	String getEconomicNatureCode();
 	
 	String getFundingSourceIdentifier();
 	Expenditure setFundingSourceIdentifier(String fundingSourceIdentifier);
 	
+	String getFundingSourceCode();
+	
 	String getLessorIdentifier();
 	Expenditure setLessorIdentifier(String lessorIdentifier);
 	
+	String getLessorCode();
+	
+	Long getEntryAuthorizationAdjustment();
+	
 	EntryAuthorization getEntryAuthorization();
 	Expenditure setEntryAuthorization(EntryAuthorization entryAuthorization);
+	
+	Long getPaymentCreditAdjustment();
 	
 	PaymentCredit getPaymentCredit();
 	Expenditure setPaymentCredit(PaymentCredit paymentCredit);

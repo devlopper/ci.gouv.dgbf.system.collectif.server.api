@@ -3,7 +3,9 @@ package ci.gouv.dgbf.system.collectif.server.api.service;
 public interface CommonDto {
 	
 	String JSON_ENTRY_AUTHORIZATION = "autorisation_engagement";
+	String JSON_ENTRY_AUTHORIZATION_ADJUSTMENT = "autorisation_engagement_ajustement";
 	String JSON_PAYMENT_CREDIT = "credit_paiement";
+	String JSON_PAYMENT_CREDIT_ADJUSTMENT = "credit_paiement_ajustement";
 	String JSON_REVENUE = "revenu";
 	
 	String JSONS_AMOUTNS = "montants";

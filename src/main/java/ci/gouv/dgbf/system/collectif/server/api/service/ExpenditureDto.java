@@ -55,7 +55,9 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	String JSON_ECONOMIC_NATURE_CODE = "nature_economique_code";
 	String JSON_ECONOMIC_NATURE_AS_STRING = "nature_economique_string";
 	String JSON_ENTRY_AUTHORIZATION = CommonDto.JSON_ENTRY_AUTHORIZATION;
+	String JSON_ENTRY_AUTHORIZATION_ADJUSTMENT = CommonDto.JSON_ENTRY_AUTHORIZATION_ADJUSTMENT;
 	String JSON_PAYMENT_CREDIT = CommonDto.JSON_PAYMENT_CREDIT;
+	String JSON_PAYMENT_CREDIT_ADJUSTMENT = CommonDto.JSON_PAYMENT_CREDIT_ADJUSTMENT;
 	String JSON_BUDGETARY_ACT_AS_STRING = "acte_budgetaire_string";
 	String JSON_BUDGETARY_ACT_VERSION_AS_STRING = "version_acte_budgetaire_string";
 	String JSON_FUNDING_SOURCE_AS_STRING = "source_financement_string";
@@ -95,10 +97,12 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 	
 	@Getter @Setter @Accessors(chain=true)
 	public static class LoadDto implements Serializable {
-		
+		@JsonbProperty(value = "identifiant") private String identifier;
 		@JsonbProperty(value = "activite") private String activity;
 		@JsonbProperty(value = "nature_economique") private String economicNature;
 		@JsonbProperty(value = "source_finanement") private String fundingSource;
 		@JsonbProperty(value = "bailleur") private String lessor;
+		@JsonbProperty(value = CommonDto.JSON_ENTRY_AUTHORIZATION) private Long entryAuthorization;
+		@JsonbProperty(value = CommonDto.JSON_PAYMENT_CREDIT) private Long paymentCredit;
 	}
 }
