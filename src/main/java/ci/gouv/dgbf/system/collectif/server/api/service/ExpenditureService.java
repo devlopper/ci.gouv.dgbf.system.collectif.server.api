@@ -74,7 +74,11 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	
 	/**/
 	
-	String HEADER_UNDEFINED_CODES_IDENTIFIERS = "identifiants_codes_non_defini";
+	String HEADER_UNDEFINED_ACTIVITIES_CODES_IDENTIFIERS = "identifiants_codes_activites_non_defini";
+	String HEADER_UNDEFINED_ECONOMICS_NATURES_CODES_IDENTIFIERS = "identifiants_codes_nature_economiques_non_defini";
+	String HEADER_UNDEFINED_FUNDINGS_SOURCES_CODES_IDENTIFIERS = "identifiants_codes_sources_financement_non_defini";
+	String HEADER_UNDEFINED_LESSORS_CODES_IDENTIFIERS = "identifiants_codes_bailleurs_non_defini";
+	
 	String HEADER_UNKNOWN_ACTIVITIES_CODES = "codes_activites_inconnus";
 	String HEADER_UNKNOWN_ECONOMICS_NATURES_CODES = "codes_natures_economiques_inconnus";
 	String HEADER_UNKNOWN_FUNDINGS_SOURCES_CODES = "codes_sources_financements_inconnus";
