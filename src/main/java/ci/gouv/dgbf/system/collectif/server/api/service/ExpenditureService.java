@@ -63,6 +63,16 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	Response getAmountsSums(@Parameter(name = PARAMETER_NAME_FILTER,description = PARAMETER_NAME_FILTER_DESCRIPTION_FRENCH) @QueryParam(PARAMETER_NAME_FILTER) String filter);
 	
 	@POST
+	@Path("chargement")
+	@Produces( MediaType.TEXT_PLAIN)
+	@Operation(description = "Charger des dépenses")
+	@APIResponses(value = {
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors du chargement des dépenses",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response load(@QueryParam(ExpenditureDto.JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER) String legislativeActVersionIdentifier,List<ExpenditureDto.LoadDto> loads,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@POST
 	@Path("verification-chargeable")
 	@Produces( MediaType.TEXT_PLAIN)
 	@Operation(description = "Verifier les dépenses chargeables")
@@ -70,7 +80,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de la vérification des dépenses chargeables",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
-	Response verifyLoadable(List<ExpenditureDto.LoadDto> loads);
+	Response verifyLoadable(@QueryParam(ExpenditureDto.JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER) String legislativeActVersionIdentifier,List<ExpenditureDto.LoadDto> loads);
 	
 	/**/
 	

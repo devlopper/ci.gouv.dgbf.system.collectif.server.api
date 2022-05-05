@@ -36,7 +36,10 @@ public interface ExpenditureBusiness extends ExpenditureResourceBusiness<Expendi
 	
 	//Result loadFromExcelFile(String legislativeActVersionIdentifier,byte[] bytes,Integer activityCodeColumnIndex,Integer economicNatureCodeColumnIndex,Integer fundingSourceCodeColumnIndex,Integer lessorCodeColumnIndex,String auditWho);
 	
-	Result verifyLoadable(Collection<Expenditure> expenditures);
+	Result load(String legislativeActVersionIdentifier,Collection<Expenditure> expenditures,String auditWho);
+	
+	Result verifyLoadable(String legislativeActVersionIdentifier,Collection<Expenditure> expenditures);
+	
 	String RESULT_MAP_UNDEFINED_ACTIVITIES_CODES_IDENTIFIERS = "undefined_activities_codes_identifiers";
 	String RESULT_MAP_UNDEFINED_ECONOMICS_NATURES_CODES_IDENTIFIERS = "undefined_economics_natures_codes_identifiers";
 	String RESULT_MAP_UNDEFINED_FUNDING_SOURCES_CODES_IDENTIFIERS = "undefined_fundings_sources_codes_identifiers";

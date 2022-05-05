@@ -8,21 +8,25 @@ public interface Expenditure extends IdentifiableSystemScalarString {
 	Expenditure setActivityIdentifier(String activityIdentifier);
 	
 	String getActivityCode();
+	Expenditure setActivityCode(String activityCode);
 	
 	String getEconomicNatureIdentifier();
 	Expenditure setEconomicNatureIdentifier(String economicNatureIdentifier);
 	
 	String getEconomicNatureCode();
+	Expenditure setEconomicNatureCode(String economicNatureCode);
 	
 	String getFundingSourceIdentifier();
 	Expenditure setFundingSourceIdentifier(String fundingSourceIdentifier);
 	
 	String getFundingSourceCode();
+	Expenditure setFundingSourceCode(String fundingSourceCode);
 	
 	String getLessorIdentifier();
 	Expenditure setLessorIdentifier(String lessorIdentifier);
 	
 	String getLessorCode();
+	Expenditure setLessorCode(String lessorCode);
 	
 	Long getEntryAuthorizationAdjustment();
 	
@@ -36,6 +40,23 @@ public interface Expenditure extends IdentifiableSystemScalarString {
 	
 	LegislativeActVersion getActVersion();
 	Expenditure setActVersion(LegislativeActVersion actVersion);
+	
+	Boolean getHasUndefinedCode();
+	Expenditure setHasUndefinedCode(Boolean value);
+	
+	Boolean getHasUnknownCode();
+	Expenditure setHasUnknownCode(Boolean value);
+	
+	Boolean getIsDuplicate();
+	Expenditure setIsDuplicate(Boolean value);
+	
+	default Boolean isLoadable() {
+		return !Boolean.TRUE.equals(getIsDuplicate()) && !Boolean.TRUE.equals(getHasUndefinedCode()) && !Boolean.TRUE.equals(getHasUnknownCode());
+	}
+	
+	default String getActivityCodeEconomicNatureCodeFundingSourceCodeLessorCode() {
+		return getActivityCode()+getEconomicNatureCode()+getFundingSourceCode()+getLessorCode();
+	}
 	
 	String NAME = "Dépense";
 	String NAME_PLURAL = "Dépenses";
