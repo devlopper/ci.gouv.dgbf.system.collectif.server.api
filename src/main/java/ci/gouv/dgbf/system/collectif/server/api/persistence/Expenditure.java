@@ -41,17 +41,17 @@ public interface Expenditure extends IdentifiableSystemScalarString {
 	LegislativeActVersion getActVersion();
 	Expenditure setActVersion(LegislativeActVersion actVersion);
 	
-	Boolean getHasUndefinedCode();
-	Expenditure setHasUndefinedCode(Boolean value);
+	Boolean getHasUndefined();
+	Expenditure setHasUndefined(Boolean value);
 	
-	Boolean getHasUnknownCode();
-	Expenditure setHasUnknownCode(Boolean value);
+	Boolean getHasUnknown();
+	Expenditure setHasUnknown(Boolean value);
 	
 	Boolean getIsDuplicate();
 	Expenditure setIsDuplicate(Boolean value);
 	
 	default Boolean isLoadable() {
-		return !Boolean.TRUE.equals(getIsDuplicate()) && !Boolean.TRUE.equals(getHasUndefinedCode()) && !Boolean.TRUE.equals(getHasUnknownCode());
+		return !Boolean.TRUE.equals(getIsDuplicate()) && !Boolean.TRUE.equals(getHasUndefined()) && !Boolean.TRUE.equals(getHasUnknown());
 	}
 	
 	default String getActivityCodeEconomicNatureCodeFundingSourceCodeLessorCode() {

@@ -1,7 +1,12 @@
 package ci.gouv.dgbf.system.collectif.server.api.service;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
+import javax.json.bind.annotation.JsonbProperty;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -10,12 +15,22 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.cyk.utility.__kernel__.collection.CollectionHelper;
+import org.cyk.utility.rest.ResponseHelper;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+
+import ci.gouv.dgbf.system.collectif.server.api.business.ExpenditureBusiness;
+import ci.gouv.dgbf.system.collectif.server.api.business.ExpenditureBusiness.LoadableVerificationResult;
+import ci.gouv.dgbf.system.collectif.server.api.business.ExpenditureBusiness.LoadableVerificationResultable;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
 @Path(ExpenditureService.PATH)
 @Tag(name = "Dépenses",description = "Gestion des dépenses")
@@ -64,23 +79,148 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	
 	@POST
 	@Path("chargement")
-	@Produces( MediaType.TEXT_PLAIN)
+	@Produces( MediaType.APPLICATION_JSON)
 	@Operation(description = "Charger des dépenses")
 	@APIResponses(value = {
-			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 			,@APIResponse(description = "Erreur lors du chargement des dépenses",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response load(@QueryParam(ExpenditureDto.JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER) String legislativeActVersionIdentifier,List<ExpenditureDto.LoadDto> loads,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
 	
 	@POST
 	@Path("verification-chargeable")
-	@Produces( MediaType.TEXT_PLAIN)
+	@Produces( MediaType.APPLICATION_JSON)
 	@Operation(description = "Verifier les dépenses chargeables")
 	@APIResponses(value = {
-			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 			,@APIResponse(description = "Erreur lors de la vérification des dépenses chargeables",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response verifyLoadable(@QueryParam(ExpenditureDto.JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER) String legislativeActVersionIdentifier,List<ExpenditureDto.LoadDto> loads);
+	
+	@Getter @Setter @Accessors(chain=true) @NoArgsConstructor
+	public static class LoadableVerificationResultDto implements ExpenditureBusiness.LoadableVerificationResultable,Serializable {
+		@JsonbProperty(JSON_MESSAGE) String message;
+		@JsonbProperty(JSON_UNDEFINED) SetDto undefined;
+		@JsonbProperty(JSON_UNKNOWN) SetDto unknown;
+		@JsonbProperty(JSON_DUPLICATES) List<String> duplicates;
+		
+		public LoadableVerificationResultDto(LoadableVerificationResult loadableVerificationResult) {
+			message = ResponseHelper.concatenate(loadableVerificationResult.getMessages());
+			if(loadableVerificationResult.hasUndefined())
+				undefined = new SetDto(loadableVerificationResult.getUndefined());
+			if(loadableVerificationResult.hasUnknown())
+				unknown = new SetDto(loadableVerificationResult.getUnknown());
+			if(loadableVerificationResult.hasDuplicates())
+				duplicates = new ArrayList<String>(loadableVerificationResult.getDuplicates());
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUndefinedActivities() {
+			return LoadableVerificationResultable.super.getUndefinedActivities();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUndefinedEconomicsNatures() {
+			return LoadableVerificationResultable.super.getUndefinedEconomicsNatures();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUndefinedFundingsSources() {
+			return LoadableVerificationResultable.super.getUndefinedFundingsSources();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUndefinedLessors() {
+			return LoadableVerificationResultable.super.getUndefinedLessors();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUndefinedEntriesAuthorizationsAdjustments() {
+			return LoadableVerificationResultable.super.getUndefinedEntriesAuthorizationsAdjustments();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUndefinedPaymentsCreditsAdjustments() {
+			return LoadableVerificationResultable.super.getUndefinedPaymentsCreditsAdjustments();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUnknownActivities() {
+			return LoadableVerificationResultable.super.getUnknownActivities();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUnknownEconomicsNatures() {
+			return LoadableVerificationResultable.super.getUnknownEconomicsNatures();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUnknownFundingsSources() {
+			return LoadableVerificationResultable.super.getUnknownFundingsSources();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUnknownLessors() {
+			return LoadableVerificationResultable.super.getUnknownLessors();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUnknownEntriesAuthorizationsAdjustments() {
+			return LoadableVerificationResultable.super.getUnknownEntriesAuthorizationsAdjustments();
+		}
+		
+		@Override @JsonbTransient
+		public Collection<String> getUnknownPaymentsCreditsAdjustments() {
+			return LoadableVerificationResultable.super.getUnknownPaymentsCreditsAdjustments();
+		}
+		
+		public static final String JSON_MESSAGE = "message";
+		public static final String JSON_UNDEFINED = "non_defini";
+		public static final String JSON_UNKNOWN = "inconnu";
+		public static final String JSON_DUPLICATES = "doublon";
+		
+		@Getter @Setter @Accessors(chain=true) @NoArgsConstructor
+		public static class SetDto implements ExpenditureBusiness.LoadableVerificationResultable.Settable,Serializable {
+			@JsonbProperty(JSON_ACTIVITIES) List<String> activities;
+			@JsonbProperty(JSON_ECONOMICS_NATURES) List<String> economicsNatures;
+			@JsonbProperty(JSON_FUNDINGS_SOURCES) List<String> fundingsSources;
+			@JsonbProperty(JSON_LESSORS) List<String> lessors;
+			@JsonbProperty(JSON_ENTRIES_AUTHORIZATIONS_ADJUSTMENTS) List<String> entriesAuthorizationsAdjustments;
+			@JsonbProperty(JSON_PAYMENTS_CREDITS_ADJUSTMENTS) List<String> paymentsCreditsAdjustments;
+			
+			public SetDto(LoadableVerificationResult.Set set) {
+				if(CollectionHelper.isNotEmpty(set.getActivities()))
+					activities = new ArrayList<String>(set.getActivities());
+				
+				if(CollectionHelper.isNotEmpty(set.getEconomicsNatures()))
+					economicsNatures = new ArrayList<String>(set.getEconomicsNatures());
+				
+				if(CollectionHelper.isNotEmpty(set.getFundingsSources()))
+					fundingsSources = new ArrayList<String>(set.getFundingsSources());
+				
+				if(CollectionHelper.isNotEmpty(set.getLessors()))
+					lessors = new ArrayList<String>(set.getLessors());
+				
+				if(CollectionHelper.isNotEmpty(set.getEntriesAuthorizationsAdjustments()))
+					entriesAuthorizationsAdjustments = new ArrayList<String>(set.getEntriesAuthorizationsAdjustments());
+				
+				if(CollectionHelper.isNotEmpty(set.getPaymentsCreditsAdjustments()))
+					paymentsCreditsAdjustments = new ArrayList<String>(set.getPaymentsCreditsAdjustments());
+			}
+			
+			@Override @JsonbTransient
+			public Boolean isNotEmpty() {
+				return Settable.super.isNotEmpty();
+			}
+		}
+		
+		public static final String JSON_ACTIVITIES = "activites";
+		public static final String JSON_ECONOMICS_NATURES = "natures_economiques";
+		public static final String JSON_FUNDINGS_SOURCES = "sources_financements";
+		public static final String JSON_LESSORS = "bailleurs";
+		public static final String JSON_ENTRIES_AUTHORIZATIONS_ADJUSTMENTS = "ajustements_autorisations_engagements";
+		public static final String JSON_PAYMENTS_CREDITS_ADJUSTMENTS = "ajustements_credits_paiements";
+	}
 	
 	/**/
 	
