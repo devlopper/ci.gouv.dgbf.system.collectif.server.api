@@ -3,7 +3,9 @@ package ci.gouv.dgbf.system.collectif.server.api.service;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.json.bind.annotation.JsonbProperty;
 import javax.json.bind.annotation.JsonbTransient;
@@ -16,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.cyk.utility.__kernel__.collection.CollectionHelper;
+import org.cyk.utility.__kernel__.map.MapHelper;
 import org.cyk.utility.rest.ResponseHelper;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -99,10 +102,16 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	
 	@Getter @Setter @Accessors(chain=true) @NoArgsConstructor
 	public static class LoadableVerificationResultDto implements ExpenditureBusiness.LoadableVerificationResultable,Serializable {
-		@JsonbProperty(JSON_MESSAGE) String message;
-		@JsonbProperty(JSON_UNDEFINED) SetDto undefined;
-		@JsonbProperty(JSON_UNKNOWN) SetDto unknown;
-		@JsonbProperty(JSON_DUPLICATES) List<String> duplicates;
+		@JsonbProperty(JSON_MESSAGE) private String message;
+		@JsonbProperty(JSON_UNDEFINED) private SetDto undefined;
+		@JsonbProperty(JSON_UNKNOWN) private SetDto unknown;
+		@JsonbProperty(JSON_DUPLICATES) private List<String> duplicates;
+		@JsonbProperty(JSON_ENTRY_AUTHORIZATION_AVAILABLE_IS_NOT_ENOUGH) private List<String> entryAuthorizationAvailableIsNotEnough;
+		@JsonbProperty(JSON_PAYMENT_CREDIT_AVAILABLE_IS_NOT_ENOUGH) private List<String> paymentCreditAvailableIsNotEnough;
+		@JsonbProperty(JSON_ENTRY_AUTHORIZATION_ADJUSTMENT) private Map<String,Long> entryAuthorizationAdjustment;
+		@JsonbProperty(JSON_PAYMENT_CREDIT_ADJUSTMENT) private Map<String,Long> paymentCreditAdjustment;
+		@JsonbProperty(JSON_ENTRY_AUTHORIZATION_AVAILABLE) private Map<String,Long> entryAuthorizationAvailable;
+		@JsonbProperty(JSON_PAYMENT_CREDIT_AVAILABLE) private Map<String,Long> paymentCreditAvailable;
 		
 		public LoadableVerificationResultDto(LoadableVerificationResult loadableVerificationResult) {
 			message = ResponseHelper.concatenate(loadableVerificationResult.getMessages());
@@ -112,6 +121,20 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 				unknown = new SetDto(loadableVerificationResult.getUnknown());
 			if(loadableVerificationResult.hasDuplicates())
 				duplicates = new ArrayList<String>(loadableVerificationResult.getDuplicates());
+			if(loadableVerificationResult.hasEntryAuthorizationAvailableIsNotEnough())
+				entryAuthorizationAvailableIsNotEnough = new ArrayList<String>(loadableVerificationResult.getEntryAuthorizationAvailableIsNotEnough());
+			if(loadableVerificationResult.hasPaymentCreditAvailableIsNotEnough())
+				paymentCreditAvailableIsNotEnough = new ArrayList<String>(loadableVerificationResult.getPaymentCreditAvailableIsNotEnough());
+			
+			if(MapHelper.isNotEmpty(loadableVerificationResult.getEntryAuthorizationAdjustment()))
+				entryAuthorizationAdjustment = new HashMap<String, Long>(loadableVerificationResult.getEntryAuthorizationAdjustment());
+			if(MapHelper.isNotEmpty(loadableVerificationResult.getPaymentCreditAdjustment()))
+				paymentCreditAdjustment = new HashMap<String, Long>(loadableVerificationResult.getPaymentCreditAdjustment());
+			
+			if(MapHelper.isNotEmpty(loadableVerificationResult.getEntryAuthorizationAvailable()))
+				entryAuthorizationAvailable = new HashMap<String, Long>(loadableVerificationResult.getEntryAuthorizationAvailable());
+			if(MapHelper.isNotEmpty(loadableVerificationResult.getPaymentCreditAvailable()))
+				paymentCreditAvailable = new HashMap<String, Long>(loadableVerificationResult.getPaymentCreditAvailable());
 		}
 		
 		@Override @JsonbTransient
@@ -178,6 +201,12 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 		public static final String JSON_UNDEFINED = "non_defini";
 		public static final String JSON_UNKNOWN = "inconnu";
 		public static final String JSON_DUPLICATES = "doublon";
+		public static final String JSON_ENTRY_AUTHORIZATION_AVAILABLE_IS_NOT_ENOUGH = "disponible_autorisation_engagement_insuffisant";
+		public static final String JSON_PAYMENT_CREDIT_AVAILABLE_IS_NOT_ENOUGH = "disponible_credit_paiement_insuffisant";
+		public static final String JSON_ENTRY_AUTHORIZATION_ADJUSTMENT = "ajustement_autorisation_engagement";
+		public static final String JSON_PAYMENT_CREDIT_ADJUSTMENT = "ajustement_credit_paiement";
+		public static final String JSON_ENTRY_AUTHORIZATION_AVAILABLE = "disponible_autorisation_engagement";
+		public static final String JSON_PAYMENT_CREDIT_AVAILABLE = "disponible_credit_paiement";
 		
 		@Getter @Setter @Accessors(chain=true) @NoArgsConstructor
 		public static class SetDto implements ExpenditureBusiness.LoadableVerificationResultable.Settable,Serializable {
@@ -206,6 +235,8 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 				
 				if(CollectionHelper.isNotEmpty(set.getPaymentsCreditsAdjustments()))
 					paymentsCreditsAdjustments = new ArrayList<String>(set.getPaymentsCreditsAdjustments());
+				
+				
 			}
 			
 			@Override @JsonbTransient

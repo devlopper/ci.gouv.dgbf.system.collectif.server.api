@@ -49,6 +49,13 @@ public interface ExpenditureBusiness extends ExpenditureResourceBusiness<Expendi
 		Settable getUndefined();
 		Settable getUnknown();
 		Collection<String> getDuplicates();
+		Collection<String> getEntryAuthorizationAvailableIsNotEnough();
+		Collection<String> getPaymentCreditAvailableIsNotEnough();
+		
+		Map<String,Long> getEntryAuthorizationAdjustment();
+		Map<String,Long> getPaymentCreditAdjustment();
+		Map<String,Long> getEntryAuthorizationAvailable();
+		Map<String,Long> getPaymentCreditAvailable();
 		
 		default Boolean hasWarnings() {
 			return hasUndefined() || hasUnknown() || hasDuplicates();
@@ -58,18 +65,70 @@ public interface ExpenditureBusiness extends ExpenditureResourceBusiness<Expendi
 			return getUndefined() != null && getUndefined().isNotEmpty();
 		}
 		
+		default Boolean hasUndefinedActivityOrEconomicNatureOrFundingSourceOrLessorByIdentifier(String identifier) {
+			if(CollectionHelper.contains(getUndefinedActivities(), identifier))
+				return Boolean.TRUE;
+			if(CollectionHelper.contains(getUndefinedEconomicsNatures(), identifier))
+				return Boolean.TRUE;
+			if(CollectionHelper.contains(getUndefinedFundingsSources(), identifier))
+				return Boolean.TRUE;
+			if(CollectionHelper.contains(getUndefinedLessors(), identifier))
+				return Boolean.TRUE;
+			return Boolean.FALSE;
+		}
+		
 		default Boolean hasUnknown() {
 			return getUnknown() != null && getUnknown().isNotEmpty();
+		}
+		
+		default Boolean hasUnknownActivityOrEconomicNatureOrFundingSourceOrLessorByIdentifier(String identifier) {
+			if(CollectionHelper.contains(getUnknownActivities(), identifier))
+				return Boolean.TRUE;
+			if(CollectionHelper.contains(getUnknownEconomicsNatures(), identifier))
+				return Boolean.TRUE;
+			if(CollectionHelper.contains(getUnknownFundingsSources(), identifier))
+				return Boolean.TRUE;
+			if(CollectionHelper.contains(getUnknownLessors(), identifier))
+				return Boolean.TRUE;
+			return Boolean.FALSE;
+		}
+		
+		default Boolean hasUndefinedOrUnknown() {
+			return Boolean.TRUE.equals(hasUndefined()) || Boolean.TRUE.equals(hasUnknown());
+		}
+		
+		default Boolean hasUndefinedOrUnknownByIdentifier(String identifier) {
+			return Boolean.TRUE.equals(hasUndefined()) || Boolean.TRUE.equals(hasUnknown());
 		}
 		
 		default Boolean hasDuplicates() {
 			return CollectionHelper.isNotEmpty(getDuplicates());
 		}
 		
+		default Boolean hasEntryAuthorizationAvailableIsNotEnough() {
+			return CollectionHelper.isNotEmpty(getEntryAuthorizationAvailableIsNotEnough());
+		}
+		
+		default Boolean hasPaymentCreditAvailableIsNotEnough() {
+			return CollectionHelper.isNotEmpty(getPaymentCreditAvailableIsNotEnough());
+		}
+		
 		default Boolean containsDuplicates(String identifier) {
 			if(!hasDuplicates())
 				return Boolean.FALSE;
 			return getDuplicates().contains(identifier);
+		}
+		
+		default Boolean containsEntryAuthorizationAvailableIsNotEnough(String identifier) {
+			if(!hasEntryAuthorizationAvailableIsNotEnough())
+				return Boolean.FALSE;
+			return getEntryAuthorizationAvailableIsNotEnough().contains(identifier);
+		}
+		
+		default Boolean containsPaymentCreditAvailableIsNotEnough(String identifier) {
+			if(!hasPaymentCreditAvailableIsNotEnough())
+				return Boolean.FALSE;
+			return getPaymentCreditAvailableIsNotEnough().contains(identifier);
 		}
 		
 		default Collection<String> getUndefinedActivities() {
@@ -199,6 +258,12 @@ public interface ExpenditureBusiness extends ExpenditureResourceBusiness<Expendi
 	public static class LoadableVerificationResult extends Result implements LoadableVerificationResultable,Serializable {
 		private Set undefined,unknown;
 		private Collection<String> duplicates;
+		private Collection<String> entryAuthorizationAvailableIsNotEnough;
+		private Collection<String> paymentCreditAvailableIsNotEnough;
+		private Map<String,Long> entryAuthorizationAdjustment;
+		private Map<String,Long> paymentCreditAdjustment;
+		private Map<String,Long> entryAuthorizationAvailable;
+		private Map<String,Long> paymentCreditAvailable;
 		
 		@Override
 		public LoadableVerificationResult open() {

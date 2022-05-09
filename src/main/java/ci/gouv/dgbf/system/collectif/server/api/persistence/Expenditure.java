@@ -50,8 +50,15 @@ public interface Expenditure extends IdentifiableSystemScalarString {
 	Boolean getIsDuplicate();
 	Expenditure setIsDuplicate(Boolean value);
 	
+	Boolean getHasNoEntryAuthorizationAvailableAmount();
+	Expenditure setHasNoEntryAuthorizationAvailableAmount(Boolean value);
+	
+	Boolean getHasNoPaymentCreditAvailableAmount();
+	Expenditure setHasNoPaymentCreditAvailableAmount(Boolean value);
+	
 	default Boolean isLoadable() {
-		return !Boolean.TRUE.equals(getIsDuplicate()) && !Boolean.TRUE.equals(getHasUndefined()) && !Boolean.TRUE.equals(getHasUnknown());
+		return !Boolean.TRUE.equals(getIsDuplicate()) && !Boolean.TRUE.equals(getHasUndefined()) && !Boolean.TRUE.equals(getHasUnknown()) && !Boolean.TRUE.equals(getHasNoEntryAuthorizationAvailableAmount())
+				&& !Boolean.TRUE.equals(getHasNoPaymentCreditAvailableAmount());
 	}
 	
 	default String getActivityCodeEconomicNatureCodeFundingSourceCodeLessorCode() {
