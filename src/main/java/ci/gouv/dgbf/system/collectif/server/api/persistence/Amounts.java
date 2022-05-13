@@ -28,8 +28,8 @@ public interface Amounts {
 	Long getAdjustment();
 	Amounts setAdjustment(Long adjustment);
 	
-	Long getAdjustmentLowerThanZero();
-	Amounts setAdjustmentLowerThanZero(Long adjustmentLowerThanZero);
+	Long getAdjustmentLessThanZero();
+	Amounts setAdjustmentLessThanZero(Long adjustmentLessThanZero);
 	
 	Long getAdjustmentGreaterThanZero();
 	Amounts setAdjustmentGreaterThanZero(Long adjustmentGreaterThanZero);
