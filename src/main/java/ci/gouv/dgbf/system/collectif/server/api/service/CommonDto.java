@@ -14,6 +14,7 @@ public interface CommonDto {
 	String JSONS_EXPENDITURES_AMOUTNS_WITHOUT_INCLUDED_MOVEMENT_AND_AVAILABLE = "montants_depenses_sans_mouvement_inclus_et_disponible";
 	String JSONS_EXPENDITURES_AMOUTNS_WITH_AVAILABLE_ONLY = "montants_depenses_avec_disponible_seulement";
 	String JSONS_EXPENDITURES_AMOUTNS_WITH_INCLUDED_MOVEMENT_ONLY = "montants_depenses_avec_mouvement_inclus_seulement";
+	String JSONS_EXPENDITURES_AMOUTNS_WITH_ADJUSTMENT_LOWER_THAN_ZERO_GREATER_THAN_ZERO_ONLY = "montants_depenses_avec_ajustment_n_p_seulement";
 	String JSONS_EXPENDITURES_ENTRY_AUTHORIZATION_AMOUTNS = "montants_"+JSON_ENTRY_AUTHORIZATION;
 	String JSONS_EXPENDITURES_PAYMENT_CREDIT_AMOUTNS = "montants_"+JSON_PAYMENT_CREDIT;
 	String JSONS_RESOURCES_AMOUTNS = "montants_ressources";
