@@ -1,5 +1,6 @@
 package ci.gouv.dgbf.system.collectif.server.api.persistence;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifiableBusinessStringNamable;
@@ -19,6 +20,9 @@ public interface LegislativeActVersion extends IdentifiableSystemScalarStringIde
 	
 	LocalDateTime getCreationDate();
 	LegislativeActVersion setCreationDate(LocalDateTime creationDate);
+	
+	LocalDate getActDate();
+	LegislativeActVersion setActDate(LocalDate actDate);
 	
 	String NAME = "Version collectif budgétaire";
 	String NAME_PLURAL = "Versions collectifs budgétaires";
