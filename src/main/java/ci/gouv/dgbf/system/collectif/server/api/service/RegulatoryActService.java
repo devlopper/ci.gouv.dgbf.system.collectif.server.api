@@ -13,8 +13,10 @@ import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 @Path(RegulatoryActService.PATH)
+@Tag(name = "Acte de gestion")
 public interface RegulatoryActService extends org.cyk.utility.service.SpecificService<RegulatoryActDto> {
 	String PATH = "actes-gestion";
 	

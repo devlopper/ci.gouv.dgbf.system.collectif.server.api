@@ -29,6 +29,7 @@ public interface ResourceDto extends IdentifiableSystemScalarString {
 	String JSON_RESOURCE = "ressource";
 	
 	String JSON_IDENTIFIER = "identifiant";
+	String JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER = "identifiant_version_collectif";
 	String JSON_SECTION_AS_STRING = "section_string";
 	String JSON_BUDGET_SPECIALIZATION_UNIT_AS_STRING = "unite_specialisation_budget_string";
 	String JSON_ACTIVITY_AS_STRING = "activite_string";

@@ -32,6 +32,16 @@ public interface ResourceService extends org.cyk.utility.service.SpecificService
 	})
 	Response adjust(List<ResourceDto.AdjustmentDto> adjustmentsDtos,@QueryParam(ResourceDto.JSON___AUDIT_WHO__) String auditWho);
 	
+	@POST
+	@Path("importation")
+	@Produces( MediaType.TEXT_PLAIN)
+	@Operation(description = "Importer les ressources")
+	@APIResponses(value = {
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de l'importation des ressources",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response import_(@QueryParam(ResourceDto.JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER) String legislativeActVersionIdentifier,@QueryParam(ResourceDto.JSON___AUDIT_WHO__) String auditWho);
+	
 	@GET
 	@Path("sommation-montants")
 	@Produces({MediaType.APPLICATION_JSON})
