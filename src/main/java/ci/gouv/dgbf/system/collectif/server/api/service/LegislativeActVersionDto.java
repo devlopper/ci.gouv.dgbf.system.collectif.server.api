@@ -21,6 +21,8 @@ public interface LegislativeActVersionDto {
 	String JSON_CODE = "code";
 	String JSON_NAME = "libelle";
 	String JSON_NUMBER = "numero";
+	String JSON_ADJUSTABLE = "ajustable";
+	String JSON_ADJUSTABLE_AS_STRING = "ajustable_chaine";
 	String JSON_IS_DEFAULT_VERSION = "est_version_par_defaut";
 	String JSON_IS_DEFAULT_VERSION_AS_STRING = "est_version_par_defaut_chaine";
 	String JSON_LEGISLATIVE_ACT = "col";
@@ -34,7 +36,7 @@ public interface LegislativeActVersionDto {
 	String JSON_ACT_GENERATABLE_AS_STRING = "acte_generable_chaine";
 	String JSON_GENERATED_ACT_DELETABLE = "acte_genere_supprimable";
 	String JSON_GENERATED_ACT_DELETABLE_AS_STRING = "acte_genere_supprimable_chaine";
-	String JSONS_GENERATED_ACT_COUNT_ACT_GENERATABLE_GENERATED_ACT_DELETABLE = "nombre_acte_acte_generable_acte_genere_supprimable";
+	String JSONS_GENERATED_ACT_COUNT_ACT_GENERATABLE_GENERATED_ACT_DELETABLE = "na_agbl_ag_sup";
 	String JSON_ENTRY_AUTHORIZATION = CommonDto.JSON_ENTRY_AUTHORIZATION;
 	String JSON_PAYMENT_CREDIT = CommonDto.JSON_PAYMENT_CREDIT;
 	String JSON_REVENUE = CommonDto.JSON_REVENUE;

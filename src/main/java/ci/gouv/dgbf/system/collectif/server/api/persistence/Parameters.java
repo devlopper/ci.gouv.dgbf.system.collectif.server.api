@@ -13,10 +13,10 @@ public interface Parameters {
 	String EXERCISE_YEAR = "exercice_annee";
 	String LEGISLATIVE_ACT_IDENTIFIER = "col_id";
 	String LEGISLATIVE_ACT_IN_PROGRESS = "col_en_cours";
-	String LATEST_LEGISLATIVE_ACT = "col_dernier";
+	String LATEST_LEGISLATIVE_ACT = "dc";
 	String LEGISLATIVE_ACT_VERSION_IDENTIFIER = "vcol_id";
 	String LATEST_LEGISLATIVE_ACT_VERSION = "vcol_dernier";
-	String DEFAULT_LEGISLATIVE_ACT_VERSION_IN_LATEST_LEGISLATIVE_ACT = "vcol_par_defaut_dans_"+LATEST_LEGISLATIVE_ACT;
+	String DEFAULT_LEGISLATIVE_ACT_VERSION_IN_LATEST_LEGISLATIVE_ACT = "vpd_"+LATEST_LEGISLATIVE_ACT;
 	String DEFAULT_VALUE = "valeur_par_defaut";
 	String SECTION_IDENTIFIER = "s_id";
 	String ADMINISTRATIVE_UNIT_IDENTIFIER = "ua_id";

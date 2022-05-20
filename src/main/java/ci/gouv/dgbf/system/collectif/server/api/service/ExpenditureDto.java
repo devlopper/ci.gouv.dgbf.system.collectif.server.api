@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.json.bind.annotation.JsonbProperty;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.cyk.utility.service.entity.IdentifiableSystemScalarString;
 
 import lombok.Getter;
@@ -93,6 +94,11 @@ public interface ExpenditureDto extends IdentifiableSystemScalarString {
 		
 		@JsonbProperty(value = "ajustement_"+PaymentCreditDto.JSON_PAYMENT_CREDIT)
 		private Long paymentCredit;
+		
+		@Override
+		public String toString() {
+			return ToStringBuilder.reflectionToString(this);
+		}
 	}
 	
 	@Getter @Setter @Accessors(chain=true)

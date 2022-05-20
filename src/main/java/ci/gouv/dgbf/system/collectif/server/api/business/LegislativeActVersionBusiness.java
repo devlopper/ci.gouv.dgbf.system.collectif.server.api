@@ -21,6 +21,9 @@ public interface LegislativeActVersionBusiness extends SpecificBusiness<Legislat
 	String DUPLICATE_AUDIT_IDENTIFIER = "DUPLICATION_VERSION_COLLECTIF_BUDGETAIRE";
 	Result duplicate(String identifier,String auditWho);
 	
+	String UPDATE_ADJUSTABLE_AUDIT_IDENTIFIER = "MISE_A_JOUR_AJUSTABLE";
+	Result updateAdjustable(String identifier,Boolean adjustable,String auditWho);
+	
 	/**/
 	
 	@Getter @Setter @Accessors(chain=true)

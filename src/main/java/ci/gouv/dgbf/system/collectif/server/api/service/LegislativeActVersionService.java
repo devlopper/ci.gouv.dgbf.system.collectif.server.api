@@ -28,11 +28,20 @@ public interface LegislativeActVersionService extends org.cyk.utility.service.Sp
 			,@QueryParam(LegislativeActVersionDto.JSON_LEGISLATIVE_ACT_IDENTIFIER) String actIdentifier,@QueryParam(LegislativeActVersionDto.JSON___AUDIT_WHO__) String auditWho);
 	
 	@POST
-	@Path("/duplication")
+	@Path("duplication")
 	@Operation(description = "Duplication de version collectif budgétaire")
 	@APIResponses(value = {
 			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de duplication de version collectif budgétaire",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response duplicate(@QueryParam(LegislativeActVersionDto.JSON_CODE) String identifier,@QueryParam(LegislativeActVersionDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@POST
+	@Path("ajustable")
+	@Operation(description = "Mise à jour de ajustable")
+	@APIResponses(value = {
+			@APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de la mise à jour de ajustable",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response updateAdjustable(@QueryParam(LegislativeActVersionDto.JSON_IDENTIFIER) String identifier,@QueryParam(LegislativeActVersionDto.JSON_ADJUSTABLE) Boolean updatable,@QueryParam(LegislativeActVersionDto.JSON___AUDIT_WHO__) String auditWho);
 }
