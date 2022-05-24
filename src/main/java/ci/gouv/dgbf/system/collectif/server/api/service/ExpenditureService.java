@@ -100,6 +100,20 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	})
 	Response verifyLoadable(@QueryParam(ExpenditureDto.JSON_LEGISLATIVE_ACT_VERSION_IDENTIFIER) String legislativeActVersionIdentifier,List<ExpenditureDto.LoadDto> loads);
 	
+	/* Reports */
+	
+	@GET
+	@Path("rapport-ajustement-saisi")
+	@Produces( MediaType.APPLICATION_OCTET_STREAM)
+	@Operation(description = "Rapporter les ajustements saisis")
+	@APIResponses(value = {
+			@APIResponse(description = "Rapport des ajustements saisis obtenu",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_OCTET_STREAM))
+			,@APIResponse(description = "Erreur lors de l'obtention du rapport des ajustements saisis",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response getAdjustmentIsNotZeroReport(@Parameter(name = PARAMETER_NAME_FILTER,description = PARAMETER_NAME_FILTER_DESCRIPTION_FRENCH) @QueryParam(PARAMETER_NAME_FILTER) String filterAsJson,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	/**/
+	
 	@Getter @Setter @Accessors(chain=true) @NoArgsConstructor
 	public static class LoadableVerificationResultDto implements ExpenditureBusiness.LoadableVerificationResultable,Serializable {
 		@JsonbProperty(JSON_MESSAGE) private String message;

@@ -11,5 +11,7 @@ public interface ExpenditureResourceBusiness<T> extends SpecificBusiness<T> {
 	
 	Result copy(String legislativeActVersionIdentifier,String legislativeActVersionSourceIdentifier,String auditWho);
 	
-	//Result getBytes(Filter filter);
+	Result buildAdjustmentIsNotZeroReportStream(Filter filter,String auditWho);
+	
+	Result buildAdjustmentIsNotZeroReportResponse(Filter filter,String auditWho);
 }
