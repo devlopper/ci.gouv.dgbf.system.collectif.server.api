@@ -110,7 +110,8 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 			@APIResponse(description = "Rapport des ajustements saisis obtenu",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_OCTET_STREAM))
 			,@APIResponse(description = "Erreur lors de l'obtention du rapport des ajustements saisis",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
-	Response getAdjustmentIsNotZeroReport(@Parameter(name = PARAMETER_NAME_FILTER,description = PARAMETER_NAME_FILTER_DESCRIPTION_FRENCH) @QueryParam(PARAMETER_NAME_FILTER) String filterAsJson,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
+	Response getAdjustmentIsNotZeroReport(@Parameter(name = PARAMETER_NAME_FILTER,description = PARAMETER_NAME_FILTER_DESCRIPTION_FRENCH) @QueryParam(PARAMETER_NAME_FILTER) String filterAsJson,@QueryParam(PARAMETER_FILE_TYPE) String fileType
+			,@QueryParam(PARAMETER_IS_CONTENT_INLINE) Boolean isContentInline,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
 	
 	/**/
 	
@@ -279,4 +280,7 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 	String HEADER_UNKNOWN_FUNDINGS_SOURCES_CODES = "codes_sources_financements_inconnus";
 	String HEADER_UNKNOWN_LESSORS_CODES = "codes_bailleurs_inconnus";
 	String HEADER_DUPLICATES_IDENTIFIERS = "identifiants_doublons";
+	
+	String PARAMETER_FILE_TYPE = "type-fichier";
+	String PARAMETER_IS_CONTENT_INLINE = "contenu-en-ligne";
 }

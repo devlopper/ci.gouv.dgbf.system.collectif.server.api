@@ -1,8 +1,9 @@
 package ci.gouv.dgbf.system.collectif.server.api.business;
 
+import java.util.Map;
+
 import org.cyk.utility.business.Result;
 import org.cyk.utility.business.SpecificBusiness;
-import org.cyk.utility.persistence.query.Filter;
 
 public interface ExpenditureResourceBusiness<T> extends SpecificBusiness<T> {
 
@@ -11,7 +12,7 @@ public interface ExpenditureResourceBusiness<T> extends SpecificBusiness<T> {
 	
 	Result copy(String legislativeActVersionIdentifier,String legislativeActVersionSourceIdentifier,String auditWho);
 	
-	Result buildAdjustmentIsNotZeroReportStream(Filter filter,String auditWho);
+	Result buildAdjustmentIsNotZeroReportResponse(Map<String,String> parameters,String fileType,Boolean isContentInline,String auditWho);
+	Result buildAdjustmentIsNotZeroReportStream(Map<String,String> parameters,String fileType,String auditWho);
 	
-	Result buildAdjustmentIsNotZeroReportResponse(Filter filter,String auditWho);
 }
