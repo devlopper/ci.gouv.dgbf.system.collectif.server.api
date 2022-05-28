@@ -110,7 +110,8 @@ public interface ExpenditureService extends org.cyk.utility.service.SpecificServ
 			@APIResponse(description = "Rapport des ajustements saisis obtenu",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_OCTET_STREAM))
 			,@APIResponse(description = "Erreur lors de l'obtention du rapport des ajustements saisis",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
-	Response getAdjustmentIsNotZeroReport(@Parameter(name = PARAMETER_NAME_FILTER,description = PARAMETER_NAME_FILTER_DESCRIPTION_FRENCH) @QueryParam(PARAMETER_NAME_FILTER) String filterAsJson,@QueryParam(PARAMETER_FILE_TYPE) String fileType
+	Response getAdjustmentIsNotZeroReport(@Parameter(name = PARAMETER_NAME_FILTER_AS_JSON,description = PARAMETER_NAME_FILTER_AS_JSON_DESCRIPTION_FRENCH) @QueryParam(PARAMETER_NAME_FILTER_AS_JSON) String filterAsJson
+			,@QueryParam(PARAMETER_FILE_TYPE) String fileType
 			,@QueryParam(PARAMETER_IS_CONTENT_INLINE) Boolean isContentInline,@QueryParam(ExpenditureDto.JSON___AUDIT_WHO__) String auditWho);
 	
 	/**/

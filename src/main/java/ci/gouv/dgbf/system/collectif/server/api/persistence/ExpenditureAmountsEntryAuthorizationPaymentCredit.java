@@ -8,8 +8,8 @@ public interface ExpenditureAmountsEntryAuthorizationPaymentCredit {
 	PaymentCredit getPaymentCredit(Boolean instantiateIfNull);
 	
 	public default ExpenditureAmountsEntryAuthorizationPaymentCredit setZeroEntryAuthorizationPaymentCredit() {
-		getEntryAuthorization(Boolean.TRUE).setZero();
-		getPaymentCredit(Boolean.TRUE).setZero();
+		getEntryAuthorization(Boolean.TRUE).zerofy();
+		getPaymentCredit(Boolean.TRUE).zerofy();
 		return this;
 	}
 	

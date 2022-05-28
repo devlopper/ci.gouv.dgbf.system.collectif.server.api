@@ -13,6 +13,7 @@ public interface AmountsDto extends Amounts {
 	String JSON_MOVEMENT = "mouvement";
 	String JSON_MOVEMENT_INCLUDED = "mouvement_inclu";
 	String JSON_ACTUAL = "actuel";
+	String JSON_ACTUAL_AT_LEGISLATIVE_ACT_DATE = "actuel_a_date_collectif";
 	String JSON_ACTUAL_MINUS_MOVEMENT_INCLUDED = "actuel_moins_mouvement_inclu";
 	String JSON_AVAILABLE = "disponible";
 	String JSON_ACTUAL_MINUS_MOVEMENT_INCLUDED_PLUS_ADJUSTMENT = "actuel_moins_mouvement_inclu_plus_ajustement";

@@ -16,6 +16,9 @@ public interface Amounts {
 	Long getActual();
 	Amounts setActual(Long actual);
 	
+	Long getActualAtLegislativeActDate();
+	Amounts setActualAtLegislativeActDate(Long actualAtLegislativeActDate);
+	
 	Long getActualMinusMovementIncluded();
 	Amounts setActualMinusMovementIncluded(Long actualMinusMovementIncluded);
 	
@@ -46,7 +49,7 @@ public interface Amounts {
 	Long getAvailableMinusMovementIncludedPlusAdjustment();
 	Amounts setAvailableMinusMovementIncludedPlusAdjustment(Long availableMinusMovementIncludedPlusAdjustment);
 	
-	public default Amounts setZero() {
+	public default Amounts zerofy() {
 		setInitial(0l);
 		setActual(0l);
 		setMovement(0l);
