@@ -49,17 +49,43 @@ public interface Amounts {
 	Long getAvailableMinusMovementIncludedPlusAdjustment();
 	Amounts setAvailableMinusMovementIncludedPlusAdjustment(Long availableMinusMovementIncludedPlusAdjustment);
 	
+	Long getActualAtLegislativeActDateMinusMovementIncludedPlusAdjustment();
+	Amounts setActualAtLegislativeActDateMinusMovementIncludedPlusAdjustment(Long actualAtLegislativeActDateMinusMovementIncludedPlusAdjustment);
+	
+	Long getActualAtLegislativeActDatePlusAdjustment();
+	Amounts setActualAtLegislativeActDatePlusAdjustment(Long actualAtLegislativeActDatePlusAdjustment);
+	
+	Long getMovementIncludedPlusAdjustment();
+	Amounts setMovementIncludedPlusAdjustment(Long movementIncludedPlusAdjustment);
+	
+	Long getInitialPlusMovementIncludedPlusAdjustment();
+	Amounts setInitialPlusMovementIncludedPlusAdjustment(Long initialPlusMovementIncludedPlusAdjustment);
+	
+	Long getInitialPlusMovementIncluded();
+	Amounts setInitialPlusMovementIncluded(Long initialPlusMovementIncluded);
+	
 	public default Amounts zerofy() {
 		setInitial(0l);
-		setActual(0l);
 		setMovement(0l);
+		setActual(0l);
+		
 		setAdjustment(0l);
-		setActualPlusAdjustment(0l);
-		setAvailable(0l);
-		
 		setExpectedAdjustment(0l);
-		setExpectedAdjustmentMinusAdjustment(0l);
 		
+		setAvailable(0l);
+		setMovementIncluded(0l);
+		setActualAtLegislativeActDate(0l);
+		
+		setActualPlusAdjustment(0l);
+		setActualMinusMovementIncluded(0l);
+		setActualMinusMovementIncludedPlusAdjustment(0l);
+		setExpectedAdjustmentMinusAdjustment(0l);
+		setAvailableMinusMovementIncludedPlusAdjustment(0l);
+		setActualAtLegislativeActDatePlusAdjustment(0l);
+		setActualAtLegislativeActDateMinusMovementIncludedPlusAdjustment(0l);
+		setMovementIncludedPlusAdjustment(0l);
+		setInitialPlusMovementIncludedPlusAdjustment(0l);
+		setInitialPlusMovementIncluded(0l);
 		return this;
 	}
 	
@@ -77,28 +103,63 @@ public interface Amounts {
 		return this;
 	}
 	
+	String COMPUTE_MOVEMENT = "computeMovement";
 	public default Amounts computeMovement() {
 		setMovement(NumberHelper.getLong(NumberHelper.subtract(getActual(),getInitial())));
 		return this;
 	}
 	
+	String COMPUTE_ACTUAL_PLUS_ADJUSTMENT = "computeActualPlusAdjustment";
 	public default Amounts computeActualPlusAdjustment() {
 		setActualPlusAdjustment(NumberHelper.getLong(NumberHelper.add(getActual(),getAdjustment())));
 		return this;
 	}
 	
+	String COMPUTE_MOVEMENT_INCLUDED_PLUS_ADJUSTMENT = "computeMovementIncludedPlusAdjustment";
+	public default Amounts computeMovementIncludedPlusAdjustment() {
+		setMovementIncludedPlusAdjustment(NumberHelper.getLong(NumberHelper.add(getMovementIncluded(),getAdjustment())));
+		return this;
+	}
+	
+	String COMPUTE_INITIAL_PLUS_MOVEMENT_INCLUDED_PLUS_ADJUSTMENT = "computeInitialPlusMovementIncludedPlusAdjustment";
+	public default Amounts computeInitialPlusMovementIncludedPlusAdjustment() {
+		setInitialPlusMovementIncludedPlusAdjustment(NumberHelper.getLong(NumberHelper.add(getInitial(),getMovementIncluded(),getAdjustment())));
+		return this;
+	}
+	
+	String COMPUTE_INITIAL_PLUS_MOVEMENT_INCLUDED = "computeInitialPlusMovementIncluded";
+	public default Amounts computeInitialPlusMovementIncluded() {
+		setInitialPlusMovementIncluded(NumberHelper.getLong(NumberHelper.add(getInitial(),getMovementIncluded())));
+		return this;
+	}
+	
+	String COMPUTE_ACTUAL_MINUS_MOVEMENT_INCLUDED_PLUS_ADJUSTMENT = "computeActualMinusMovementIncludedPlusAdjustment";
 	public default Amounts computeActualMinusMovementIncludedPlusAdjustment() {
 		setActualMinusMovementIncludedPlusAdjustment(NumberHelper.getLong(NumberHelper.add(NumberHelper.subtract(getActual(),getMovementIncluded()),getAdjustment())));
 		return this;
 	}
 	
+	String COMPUTE_AVAILABLE_MINUS_MOVEMENT_INCLUDED_PLUS_ADJUSTMENT = "computeAvailableMinusMovementIncludedPlusAdjustment";
 	public default Amounts computeAvailableMinusMovementIncludedPlusAdjustment() {
 		setAvailableMinusMovementIncludedPlusAdjustment(NumberHelper.getLong(NumberHelper.add(NumberHelper.subtract(getAvailable(),getMovementIncluded()),getAdjustment())));
 		return this;
 	}
 	
+	String COMPUTE_EXPECTED_ADJUSTMENT_MINUS_ADJUSTMENT = "computeExpectedAdjustmentMinusAdjustment";
 	public default Amounts computeExpectedAdjustmentMinusAdjustment() {
 		setExpectedAdjustmentMinusAdjustment(NumberHelper.getLong(NumberHelper.subtract(getExpectedAdjustment(),getAdjustment())));
+		return this;
+	}
+	
+	String COMPUTE_ACTUAL_AT_LEGISLATIVE_ACT_DATE_PLUS_ADJUSTMENT = "computeActualAtLegislativeActDatePlusAdjustment";
+	public default Amounts computeActualAtLegislativeActDatePlusAdjustment() {
+		setActualAtLegislativeActDatePlusAdjustment(NumberHelper.getLong(NumberHelper.add(getActualAtLegislativeActDate(),getAdjustment())));
+		return this;
+	}
+	
+	String COMPUTE_ACTUAL_AT_LEGISLATIVE_ACT_DATE_MINUS_MOVEMENT_INCLUDED_PLUS_ADJUSTMENT = "computeActualAtLegislativeActDateMinusMovementIncludedPlusAdjustment";
+	public default Amounts computeActualAtLegislativeActDateMinusMovementIncludedPlusAdjustment() {
+		setActualAtLegislativeActDateMinusMovementIncludedPlusAdjustment(NumberHelper.getLong(NumberHelper.add(NumberHelper.subtract(getActualAtLegislativeActDate(),getMovementIncluded()),getAdjustment())));
 		return this;
 	}
 	
