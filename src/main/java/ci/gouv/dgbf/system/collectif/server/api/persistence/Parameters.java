@@ -53,6 +53,7 @@ public interface Parameters {
 	String GENERATED_ACT_EXPENDITURE_EXISTS = "d_ag_existe";
 	
 	String AMOUNT_SUMABLE = "montant_sommable";
+	//String AMOUNT_SUMABLE_ALL = "montant_sommable_tout";
 	String AMOUNT_SUMABLE_WITHOUT_INCLUDED_MOVEMENT_AND_AVAILABLE = "montant_sommable_sans_mouvement_inclus_et_disponible";
 	String AMOUNT_SUMABLE_WITH_INCLUDED_MOVEMENT_ONLY = "montant_sommable_avec_mouvement_inclus_seulement";
 	String AMOUNT_SUMABLE_WITH_AVAILABLE_ONLY = "montant_sommable_avec_disponible_seulement";
