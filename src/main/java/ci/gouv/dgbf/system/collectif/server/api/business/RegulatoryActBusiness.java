@@ -19,4 +19,8 @@ public interface RegulatoryActBusiness extends SpecificBusiness<RegulatoryAct> {
 	String EXCLUDE_AUDIT_IDENTIFIER = "EXCLUSION";
 	Result exclude(Collection<String> identifiers,String legislativeActVersionIdentifier,Boolean existingIgnorable,String auditWho);
 	Result exclude(String legislativeActIdentifier,Boolean existingIgnorable,String auditWho,String...identifiers);
+	
+	String INCLUDE_COMPREHENSIVELY_AUDIT_IDENTIFIER = "INCLUSION_EXHAUSTIVE";
+	Result includeComprehensively(Collection<String> identifiers,String legislativeActVersionIdentifier,String auditWho);
+	Result includeComprehensively(String legislativeActIdentifier,String auditWho,String...identifiers);
 }

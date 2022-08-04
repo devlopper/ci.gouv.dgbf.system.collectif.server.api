@@ -41,4 +41,15 @@ public interface RegulatoryActService extends org.cyk.utility.service.SpecificSe
 	})
 	Response exclude(@QueryParam(RegulatoryActDto.JSONS_IDENTIFIERS) List<String> identifiers,@QueryParam(RegulatoryActDto.JSON_LEGISLATIVE_VERSION_IDENTIFIER) String legislativeActVersionIdentifier
 			,@QueryParam(RegulatoryActDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable,@QueryParam(RegulatoryActDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@POST
+	@Path("inclusion-exhaustive")
+	@Produces({MediaType.APPLICATION_JSON})
+	@Operation(description = "Inclure de manière exhaustive une liste d'actes de gestion dans un collectif budgétaire")
+	@APIResponses(value = {
+		@APIResponse(description = "Une liste exhaustive d'actes de gestion",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+		,@APIResponse(description = "Erreur lors de l'inclusion de manière exhaustive",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response includeComprehensively(@QueryParam(RegulatoryActDto.JSONS_IDENTIFIERS) List<String> identifiers,@QueryParam(RegulatoryActDto.JSON_LEGISLATIVE_VERSION_IDENTIFIER) String legislativeActVersionIdentifier
+			,@QueryParam(RegulatoryActDto.JSON___AUDIT_WHO__) String auditWho);
 }
